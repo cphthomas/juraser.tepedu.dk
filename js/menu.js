@@ -33,8 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentPage = 'index.html';
     if (!filename || filename === 'index.html' || pathname.endsWith('/')) {
         currentPage = 'index.html';
-    } else if (filename === 'kapitel23.html') {
-        currentPage = 'kapitel23.html';
     } else if (/kapitel\d+\.html/.test(filename)) {
         currentPage = filename;
     }
@@ -57,16 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         if (nextLink) {
             nextLink.href = nextHref;
-            if (currentPage === 'kapitel23.html') {
-                nextLink.classList.add('disabled');
-                nextLink.removeAttribute('href');
-            } else {
-                nextLink.classList.remove('disabled');
-            }
+            nextLink.classList.remove('disabled');
         }
     } else {
-        // Fallback for untracked pages
-        if (prevLink) prevLink.href = 'kapitel23.html';
+        if (prevLink) prevLink.href = 'index.html';
         if (nextLink) nextLink.href = 'kapitel1.html';
     }
 });

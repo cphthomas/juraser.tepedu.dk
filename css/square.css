@@ -3,6 +3,119 @@
     border-radius: 0 !important;
 }
 
+/*
+ * Navbar-dropdown — skal være stor og ens på forside + kapitler.
+ * square.css loader sidst, så den vinder over Bootstrap/MDB.
+ */
+.navbar .dropdown-menu,
+.navbar .dropdown-menu.show,
+nav.navbar .dropdown-menu,
+.dropdown-menu.dropdown-menu-right {
+    min-width: 380px !important;
+    width: 400px !important;
+    max-width: 94vw !important;
+    padding: 0.6rem 0 !important;
+    margin-top: 0.4rem !important;
+    background-color: #f7f7f5 !important;
+    border: 1px solid rgba(15, 109, 92, 0.28) !important;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16) !important;
+    overflow: hidden !important;
+}
+
+.navbar .dropdown-item,
+nav.navbar .dropdown-item,
+.dropdown-menu .dropdown-item {
+    display: block !important;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-size: 1.05rem !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.01em !important;
+    padding: 0.95rem 1.35rem !important;
+    margin: 0 !important;
+    color: #141414 !important;
+    white-space: normal !important;
+    border-left: 4px solid transparent !important;
+    opacity: 1 !important;
+    transform: none !important;
+    background-color: transparent !important;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus,
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+    background-color: rgba(15, 109, 92, 0.16) !important;
+    color: #0a3d34 !important;
+    font-weight: 500 !important;
+    border-left-color: #0f6d5c !important;
+    padding-left: 1.55rem !important;
+}
+
+.navbar .dropdown-item:active,
+.dropdown-menu .dropdown-item:active {
+    background-color: rgba(15, 109, 92, 0.28) !important;
+    color: #062820 !important;
+}
+
+/* Åbn med slide */
+.navbar .dropdown-menu {
+    display: block !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: opacity 0.2s ease, transform 0.26s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.2s ease !important;
+}
+
+.navbar .dropdown-menu.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+}
+
+.navbar .dropdown-menu.show .dropdown-item {
+    animation: juraserMenuItem 0.28s ease both;
+}
+
+.navbar .dropdown-menu.show .dropdown-item:nth-child(1) { animation-delay: 0.02s; }
+.navbar .dropdown-menu.show .dropdown-item:nth-child(2) { animation-delay: 0.05s; }
+.navbar .dropdown-menu.show .dropdown-item:nth-child(3) { animation-delay: 0.08s; }
+.navbar .dropdown-menu.show .dropdown-item:nth-child(4) { animation-delay: 0.11s; }
+.navbar .dropdown-menu.show .dropdown-item:nth-child(5) { animation-delay: 0.14s; }
+
+@keyframes juraserMenuItem {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+[data-theme="dark"] .navbar .dropdown-menu,
+[data-theme="dark"] .dropdown-menu.dropdown-menu-right {
+    background-color: #121212 !important;
+    border-color: #404040 !important;
+}
+
+[data-theme="dark"] .navbar .dropdown-item,
+[data-theme="dark"] .dropdown-menu .dropdown-item {
+    color: #f0f0f0 !important;
+}
+
+[data-theme="dark"] .navbar .dropdown-item:hover,
+[data-theme="dark"] .navbar .dropdown-item:focus,
+[data-theme="dark"] .dropdown-menu .dropdown-item:hover,
+[data-theme="dark"] .dropdown-menu .dropdown-item:focus {
+    background-color: rgba(58, 168, 143, 0.28) !important;
+    color: #ffffff !important;
+    border-left-color: #3aa88f !important;
+}
+
 .table thead th {
     background-color: #0f6d5c;
     color: #ffffff;
@@ -15,4 +128,18 @@
 [data-theme="dark"] .table thead th {
     background-color: #0a4436;
     color: #ffffff;
+}
+
+@media (max-width: 480px) {
+    .navbar .dropdown-menu,
+    .dropdown-menu.dropdown-menu-right {
+        min-width: 92vw !important;
+        width: 92vw !important;
+    }
+
+    .navbar .dropdown-item,
+    .dropdown-menu .dropdown-item {
+        font-size: 1rem !important;
+        padding: 0.85rem 1.1rem !important;
+    }
 }

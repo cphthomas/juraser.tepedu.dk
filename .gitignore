@@ -2,3 +2,5 @@
 .wrangler/
 .vscode/
 *.crdownload
+
+.netlify/

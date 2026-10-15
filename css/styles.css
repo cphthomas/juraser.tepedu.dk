@@ -372,33 +372,54 @@ a[href^="#"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLi
 }
 
 .dropdown-menu {
-    background-color: rgba(223, 223, 223, 0.97);
+    background-color: rgba(248, 248, 246, 0.98);
+    border: 1px solid rgba(15, 109, 92, 0.22);
     border-radius: 0;
     max-height: calc(100vh - 70px);
     overflow-y: auto;
     overflow-x: hidden;
-    min-width: 260px;
-    max-width: min(400px, 92vw);
-    padding: 0.1rem 0;
+    min-width: 380px;
+    width: 400px;
+    max-width: 94vw;
+    padding: 0.6rem 0;
+    margin-top: 0.35rem !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
     -webkit-overflow-scrolling: touch;
+    display: block !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.22s ease, transform 0.28s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.22s ease;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 .dropdown-menu .dropdown-item {
     font-family: var(--font-ui, 'IBM Plex Mono', monospace);
-    font-size: 0.65rem;
+    font-size: 1.05rem;
     font-weight: 400;
-    line-height: 1.15;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
     white-space: normal;
-    padding: 0.08rem 0.7rem;
-    color: #333;
-    transition: font-weight 0.1s ease, background-color 0.1s ease, color 0.1s ease;
+    padding: 0.95rem 1.35rem;
+    color: #1a1a1a;
+    border-left: 4px solid transparent;
+    transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, padding-left 0.18s ease;
 }
 
 .dropdown-item:hover,
 .dropdown-item:focus {
-    background-color: rgba(15, 109, 92, 0.32) !important;
-    color: #000 !important;
-    font-weight: 700 !important;
+    background-color: rgba(15, 109, 92, 0.14) !important;
+    color: #0a3d34 !important;
+    font-weight: 500 !important;
+    border-left-color: #0f6d5c;
+    padding-left: 1.35rem;
 }
 
 .content {
@@ -1355,18 +1376,20 @@ h4 .modern-icon {
 
 /* Dark theme dropdown */
 [data-theme="dark"] .dropdown-menu {
-    background-color: rgba(26, 26, 26, 0.98);
+    background-color: rgba(18, 18, 18, 0.98);
     border: 1px solid #404040;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
 }
 [data-theme="dark"] .dropdown-menu .dropdown-item {
-    color: #e0e0e0;
+    color: #e8e8e8;
     font-weight: 400;
 }
 [data-theme="dark"] .dropdown-item:hover,
 [data-theme="dark"] .dropdown-item:focus {
-    background-color: rgba(58, 168, 143, 0.42) !important;
+    background-color: rgba(58, 168, 143, 0.28) !important;
     color: #ffffff !important;
-    font-weight: 700 !important;
+    font-weight: 500 !important;
+    border-left-color: #3aa88f;
 }
 [data-theme="dark"] #left-aligned-sidebar {
     background-color: rgba(18, 18, 18, 0.97);
