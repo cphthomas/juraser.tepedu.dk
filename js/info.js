@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <img src="${imagesBase}mig.jpg" alt="Thomas Petersen">Lektor Thomas Petersen
               <br><br>
             <p><strong>APA reference:</strong><br>
-            Hanke, T., & Petersen, T. (${currentYear}). <em>Markedsføring og køberet for service- og oplevelsesøkonomer</em>. Tepedu. https://juraser.tepedu.dk</p><br>
+            Hanke, T., & Petersen, T. (${currentYear}). <em>Jura for serviceøkonomer</em>. Tepedu. https://juraser.tepedu.dk</p><br>
             <p>Onlinebogen er udviklet med anvendelse af kunstig intelligens til udformning af teknisk struktur (navigation, HTML, CSS, JavaScript) samt fagligt indhold og eksempelmateriale. Indholdet bør altid krydstjekkes med gældende lovgivning på retsinformation.dk.</p>
             <p><strong>Disclaimer:</strong> Onlinebogen er udarbejdet til undervisningsformål og stilles frit til rådighed. Indholdet bør ikke anvendes som grundlag for juridiske dispositioner eller beslutninger. For konkret juridisk bistand henvises til en advokat.
             </p>
