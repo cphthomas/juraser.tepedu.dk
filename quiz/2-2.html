@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta http-equiv="Content-Language" content="da">
+     <title>Quiz 2.2 om Købeloven: Mangel og afhjælpning</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://quiz.tepedu.dk/styles.css">
+     <link rel="icon" href="https://quiz.tepedu.dk/favicon.svg">
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body data-formål="Kunne se en mangel og vælge det rigtige første skridt." data-forudsætning-url="https://juraser.tepedu.dk/kapitel2.html" data-forudsætning-text="Online-bog Jura for serviceøkonomer, kapitel2.html" data-forudsætning="">
+     <header> <a href="../index.html" target="_blank"><img src="../tepedulogoanim.svg" alt="Logo" width="8%"></a>
+          <h2>Quiz Jura for serviceøkonomer</h2>
+     </header>
+
+     <div class="container">
+          <div class="row justify-content-center">
+               <div class="col-12 col-md-12 col-lg-12">
+                    <div class="card mt-5">
+                         <div class="card-body">
+                              <div id="postProgressContent" class="mt-4" style="color: rgb(255, 255, 255);">
+                                   <div>
+                                        <h1>2. Mangel og afhjælpning</h1>
+                                   </div>
+                              </div>
+                              <h1 id="question" class="card-title"></h1>
+                              <div id="options" class="mt-4"></div>
+                              <div id="progress-bar" class="progress-bar-container"></div>
+                              <div id="quiz-data" style="display: none;">
+                                   <!-- 0 -->
+                                   <div class="question"
+                                        data-question="Badekåbens søm går op efter tre uger ved normal brug. Hvad er første skridt?"
+                                        data-answer="1"
+                                        data-explanation="Afhjælpning. Reparation eller en ny kåbe inden for rimelig tid.">
+                                        <div class="option" data-option="Ophævelse med det samme"></div>
+                                        <div class="option" data-option="Afhjælpning inden for rimelig tid"></div>
+                                        <div class="option" data-option="Afvis, fordi der er gået over 48 timer"></div>
+                                        <div class="option" data-option="Kræv et nyt køb til fuld pris"></div>
+                                   </div>
+
+                                   <!-- 1 -->
+                                   <div class="question"
+                                        data-question="Gæsten fortryder farven på en T-shirt dagen efter. Er det en mangel?"
+                                        data-answer="2"
+                                        data-explanation="Nej. Fortrydelse er ikke en mangel.">
+                                        <div class="option" data-option="Ja, farve er altid en mangel"></div>
+                                        <div class="option" data-option="Ja, i de første 14 dage"></div>
+                                        <div class="option" data-option="Nej. Der er ingen fejl ved varen"></div>
+                                        <div class="option" data-option="Ja, hvis T-shirten var på udsalg"></div>
+                                   </div>
+
+                                   <!-- 2 -->
+                                   <div class="question"
+                                        data-question="Lampen på udsalg tænder ikke. Ridsen var oplyst. Hvad gælder?"
+                                        data-answer="0"
+                                        data-explanation="Den oplyste ridse er ikke en mangel. En lampe, der ikke tænder, er en mangel.">
+                                        <div class="option" data-option="Det, at lampen ikke tænder, er en mangel"></div>
+                                        <div class="option" data-option="Hele købet er uden reklamation, fordi det er udsalg"></div>
+                                        <div class="option" data-option="Kun ridsen kan påklages"></div>
+                                        <div class="option" data-option="Gæsten skal vente to år, før du skal reagere"></div>
+                                   </div>
+
+                                   <!-- 3 -->
+                                   <div class="question"
+                                        data-question="Et skilt siger ingen ombytning på udsalgsvarer. Gæsten køber en skjult defekt. Holder skiltet?"
+                                        data-answer="3"
+                                        data-explanation="Nej. Du kan ikke fjerne reklamationsretten i et forbrugerkøb.">
+                                        <div class="option" data-option="Ja, fordi gæsten så skiltet"></div>
+                                        <div class="option" data-option="Ja, på alle udsalgsvarer"></div>
+                                        <div class="option" data-option="Ja, hvis kvitteringen gentager skiltet"></div>
+                                        <div class="option" data-option="Nej. Skiltet fjerner ikke reklamationsretten"></div>
+                                   </div>
+
+                                   <!-- 4 -->
+                                   <div class="question"
+                                        data-question="Chokoladen i minibaren er en uge over dato. Hvad tilbyder du?"
+                                        data-answer="1"
+                                        data-explanation="Det er en mangel ved en vare. Tilbyd pengene tilbage eller en ny vare.">
+                                        <div class="option" data-option="Ingenting. Minibaren er en ydelse"></div>
+                                        <div class="option" data-option="Pengene tilbage eller en ny vare"></div>
+                                        <div class="option" data-option="Kun en undskyldning"></div>
+                                        <div class="option" data-option="Et nyt værelse"></div>
+                                   </div>
+
+                                   <!-- 5 -->
+                                   <div class="question"
+                                        data-question="Du kan ikke reparere kufferten inden for rimelig tid. Hvad kan gæsten?"
+                                        data-answer="2"
+                                        data-explanation="Gæsten kan hæve købet. Pengene går tilbage, og gæsten afleverer varen.">
+                                        <div class="option" data-option="Kun bede om rabat og beholde kufferten"></div>
+                                        <div class="option" data-option="Vente i to år"></div>
+                                        <div class="option" data-option="Hæve købet"></div>
+                                        <div class="option" data-option="Ingenting, fordi du har påbegyndt en reparation"></div>
+                                   </div>
+
+                                   <!-- 6 -->
+                                   <div class="question"
+                                        data-question="Reparationen af højttaleren har stået stille i otte dage, og reservedelen mangler. Kan gæsten hæve?"
+                                        data-answer="0"
+                                        data-explanation="Ja, hvis det står klart, at reparationen ikke sker inden for rimelig tid.">
+                                        <div class="option" data-option="Ja, hvis reparationen ikke sker inden for rimelig tid"></div>
+                                        <div class="option" data-option="Nej. Du har altid ret til at reparere"></div>
+                                        <div class="option" data-option="Nej, før der er gået to år"></div>
+                                        <div class="option" data-option="Kun hvis varen kostede over 5.000 kr."></div>
+                                   </div>
+
+                                   <!-- 7 -->
+                                   <div class="question"
+                                        data-question="Hvad er et afslag?"
+                                        data-answer="1"
+                                        data-explanation="Gæsten beholder varen eller opholdet, men betaler mindre.">
+                                        <div class="option" data-option="Aftalen rulles helt tilbage"></div>
+                                        <div class="option" data-option="Prisen sættes ned, og aftalen fortsætter"></div>
+                                        <div class="option" data-option="Gæsten skal købe en ny vare"></div>
+                                        <div class="option" data-option="Du sender en reklame"></div>
+                                   </div>
+
+                                   <!-- 8 -->
+                                   <div class="question"
+                                        data-question="Gaven er købt i shoppen. Lynlåsen går i stykker efter en måned. Må gavemodtageren reklamere?"
+                                        data-answer="3"
+                                        data-explanation="Ja, typisk. Bed om kvittering eller anden dokumentation.">
+                                        <div class="option" data-option="Nej. Kun den, der betalte, må klage"></div>
+                                        <div class="option" data-option="Nej. Gaver er uden for købeloven"></div>
+                                        <div class="option" data-option="Kun hvis gaven kostede over 500 kr."></div>
+                                        <div class="option" data-option="Ja, typisk, med kvittering eller anden dokumentation"></div>
+                                   </div>
+
+                                   <!-- 9 -->
+                                   <div class="question"
+                                        data-question="Hvad er forskellen på garanti og reklamationsret?"
+                                        data-answer="2"
+                                        data-explanation="Reklamationsretten følger loven. Garantien er et ekstra løfte oveni.">
+                                        <div class="option" data-option="Garantien fjerner reklamationsretten"></div>
+                                        <div class="option" data-option="Kun garantien gælder i shoppen"></div>
+                                        <div class="option" data-option="Reklamationsretten følger loven. Garantien er et ekstra løfte"></div>
+                                        <div class="option" data-option="Reklamationsret gælder kun ydelser"></div>
+                                   </div>
+
+                              </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://quiz.tepedu.dk/script.js"></script>
+</body>
+</html>

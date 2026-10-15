@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             acceptNode(node) {
                 const parent = node.parentElement;
                 if (!parent) return NodeFilter.FILTER_REJECT;
-                if (parent.closest('.legal-term, a, script, style, h1, .chapter-banner, .book-quiz')) {
+                if (parent.closest('.legal-term, a, script, style, h1, .chapter-banner')) {
                     return NodeFilter.FILTER_REJECT;
                 }
                 if (!parent.closest('p, li, td')) return NodeFilter.FILTER_REJECT;

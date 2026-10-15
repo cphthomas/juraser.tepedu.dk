@@ -1,3 +1,26 @@
+/* Quizlinks sidst i kapitlet, samme teal som jura.tepedu.dk */
+.quiz-container .effectLinks {
+    background: #14b8a6 !important;
+    color: #ffffff !important;
+    padding: 15px 20px !important;
+    margin-bottom: 0 !important;
+    min-height: 0 !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+
+.quiz-container .effectLinks::after {
+    background: #15171a !important;
+    color: #ffffff !important;
+    padding: 15px 20px !important;
+}
+
+.quiz-container .effectLinks:hover,
+[data-theme="dark"] .quiz-container .effectLinks:hover {
+    background: #15171a !important;
+    color: #ffffff !important;
+}
+
 /* Firkantede hjørner på alle flader */
 *, *::before, *::after {
     border-radius: 0 !important;

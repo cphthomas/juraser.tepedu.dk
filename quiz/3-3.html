@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta http-equiv="Content-Language" content="da">
+     <title>Quiz 3.3 om Ordliste: Hvilken lov</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://quiz.tepedu.dk/styles.css">
+     <link rel="icon" href="https://quiz.tepedu.dk/favicon.svg">
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body data-formål="Kunne vælge den rigtige lov, før du svarer gæsten." data-forudsætning-url="https://juraser.tepedu.dk/kapitel3.html" data-forudsætning-text="Online-bog Jura for serviceøkonomer, kapitel3.html" data-forudsætning="">
+     <header> <a href="../index.html" target="_blank"><img src="../tepedulogoanim.svg" alt="Logo" width="8%"></a>
+          <h2>Quiz Jura for serviceøkonomer</h2>
+     </header>
+
+     <div class="container">
+          <div class="row justify-content-center">
+               <div class="col-12 col-md-12 col-lg-12">
+                    <div class="card mt-5">
+                         <div class="card-body">
+                              <div id="postProgressContent" class="mt-4" style="color: rgb(255, 255, 255);">
+                                   <div>
+                                        <h1>3. Hvilken lov</h1>
+                                   </div>
+                              </div>
+                              <h1 id="question" class="card-title"></h1>
+                              <div id="options" class="mt-4"></div>
+                              <div id="progress-bar" class="progress-bar-container"></div>
+                              <div id="quiz-data" style="display: none;">
+                                   <!-- 0 -->
+                                   <div class="question"
+                                        data-question="Opslag, pris, influencer og spam. Hvor starter du?"
+                                        data-answer="0"
+                                        data-explanation="Markedsføringsloven i kapitel 1.">
+                                        <div class="option" data-option="Markedsføringsloven"></div>
+                                        <div class="option" data-option="Købelovens mangelsregler"></div>
+                                        <div class="option" data-option="Kun pakkerejseloven"></div>
+                                        <div class="option" data-option="Kun aftalelovens § 36"></div>
+                                   </div>
+
+                                   <!-- 1 -->
+                                   <div class="question"
+                                        data-question="Flaske, souvenir, T-shirt og linned. Hvor starter du?"
+                                        data-answer="2"
+                                        data-explanation="Købeloven i kapitel 2.">
+                                        <div class="option" data-option="Kun markedsføringsloven"></div>
+                                        <div class="option" data-option="Pakkerejseloven"></div>
+                                        <div class="option" data-option="Købeloven"></div>
+                                        <div class="option" data-option="Forbrugeraftalelovens spamregler"></div>
+                                   </div>
+
+                                   <!-- 2 -->
+                                   <div class="question"
+                                        data-question="Fly, hotel og cykel til én samlet pris. Hvad ligner det?"
+                                        data-answer="1"
+                                        data-explanation="En pakkerejse. Brug pakkerejselovens afbestillingsregler.">
+                                        <div class="option" data-option="Almindeligt løsøre"></div>
+                                        <div class="option" data-option="En pakkerejse"></div>
+                                        <div class="option" data-option="Et handelskøb"></div>
+                                        <div class="option" data-option="En kreditnota"></div>
+                                   </div>
+
+                                   <!-- 3 -->
+                                   <div class="question"
+                                        data-question="Urimelige standardvilkår over for en forbruger. Hvor kigger du?"
+                                        data-answer="3"
+                                        data-explanation="Aftalelovens § 36 og § 38 c.">
+                                        <div class="option" data-option="Kun købelovens risikoovergang"></div>
+                                        <div class="option" data-option="Kun markedsføringslovens § 11 om børn"></div>
+                                        <div class="option" data-option="Kun EAL"></div>
+                                        <div class="option" data-option="Aftalelovens regler om urimelige vilkår"></div>
+                                   </div>
+
+                                   <!-- 4 -->
+                                   <div class="question"
+                                        data-question="Et løbende spa-kort, som gæsten vil stoppe. Hvilket regelsæt er relevant?"
+                                        data-answer="0"
+                                        data-explanation="Forbrugeraftalelovens regler om opsigelse af løbende aftaler, sammen med kapitel 1.">
+                                        <div class="option" data-option="Reglerne om opsigelse af løbende aftaler"></div>
+                                        <div class="option" data-option="Købelovens toårsfrist"></div>
+                                        <div class="option" data-option="Kun formodningsreglen"></div>
+                                        <div class="option" data-option="Kun risikoovergangen"></div>
+                                   </div>
+
+                                   <!-- 5 -->
+                                   <div class="question"
+                                        data-question="Grossisten leverer hullerede betræk. Hvilket køb?"
+                                        data-answer="1"
+                                        data-explanation="Handelskøb. Reklamér samme dag.">
+                                        <div class="option" data-option="Forbrugerkøb"></div>
+                                        <div class="option" data-option="Handelskøb"></div>
+                                        <div class="option" data-option="Pakkerejse"></div>
+                                        <div class="option" data-option="Skjult reklame"></div>
+                                   </div>
+
+                                   <!-- 6 -->
+                                   <div class="question"
+                                        data-question="En hotelklage, som du ikke kan løse. Hvor kan den ende?"
+                                        data-answer="2"
+                                        data-explanation="Ankenævnet for Hotel, Restaurant og Turisme. En pakkerejse kan gå til Pakkerejse-Ankenævnet.">
+                                        <div class="option" data-option="Altid i Højesteret først"></div>
+                                        <div class="option" data-option="Kun hos politiet"></div>
+                                        <div class="option" data-option="Et ankenævn"></div>
+                                        <div class="option" data-option="Kun i købelovens § 1"></div>
+                                   </div>
+
+                                   <!-- 7 -->
+                                   <div class="question"
+                                        data-question="Gæsten vil have en praktisk mail om bryllupsmiddagen. Kræver det samtykke?"
+                                        data-answer="0"
+                                        data-explanation="Nej. Praktisk information om aftalen er ikke reklame.">
+                                        <div class="option" data-option="Nej. Det hører til aftalen"></div>
+                                        <div class="option" data-option="Ja, altid"></div>
+                                        <div class="option" data-option="Ja, hvis der er over 10 gæster"></div>
+                                        <div class="option" data-option="Ja, hvis mailen har et emnefelt"></div>
+                                   </div>
+
+                                   <!-- 8 -->
+                                   <div class="question"
+                                        data-question="Gæsten vil på tilbudslisten til næste weekend. Kræver det samtykke?"
+                                        data-answer="3"
+                                        data-explanation="Ja. Reklame for næste weekend kræver samtykke.">
+                                        <div class="option" data-option="Nej, fordi gæsten har boet på hotellet"></div>
+                                        <div class="option" data-option="Nej, hvis du skriver Reklame"></div>
+                                        <div class="option" data-option="Nej, hvis afmelding findes"></div>
+                                        <div class="option" data-option="Ja"></div>
+                                   </div>
+
+                                   <!-- 9 -->
+                                   <div class="question"
+                                        data-question="Du kan ikke skaffe vand på værelset. Hvad er en udenretlig løsning?"
+                                        data-answer="1"
+                                        data-explanation="Flyt gæsten og giv et afslag, før sagen ender i et nævn.">
+                                        <div class="option" data-option="Bed gæsten vente til næste morgen uden alternativ"></div>
+                                        <div class="option" data-option="Flyt gæsten og giv et afslag"></div>
+                                        <div class="option" data-option="Slet bookingen uden besked"></div>
+                                        <div class="option" data-option="Kræv et nyt depositum"></div>
+                                   </div>
+
+                              </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://quiz.tepedu.dk/script.js"></script>
+</body>
+</html>

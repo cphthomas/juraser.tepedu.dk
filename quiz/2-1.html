@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta http-equiv="Content-Language" content="da">
+     <title>Quiz 2.1 om Købeloven: Vare eller ydelse</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://quiz.tepedu.dk/styles.css">
+     <link rel="icon" href="https://quiz.tepedu.dk/favicon.svg">
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body data-formål="Kunne se, hvornår købeloven gælder i hotel, restaurant og shop." data-forudsætning-url="https://juraser.tepedu.dk/kapitel2.html" data-forudsætning-text="Online-bog Jura for serviceøkonomer, kapitel2.html" data-forudsætning="">
+     <header> <a href="../index.html" target="_blank"><img src="../tepedulogoanim.svg" alt="Logo" width="8%"></a>
+          <h2>Quiz Jura for serviceøkonomer</h2>
+     </header>
+
+     <div class="container">
+          <div class="row justify-content-center">
+               <div class="col-12 col-md-12 col-lg-12">
+                    <div class="card mt-5">
+                         <div class="card-body">
+                              <div id="postProgressContent" class="mt-4" style="color: rgb(255, 255, 255);">
+                                   <div>
+                                        <h1>1. Vare eller ydelse</h1>
+                                   </div>
+                              </div>
+                              <h1 id="question" class="card-title"></h1>
+                              <div id="options" class="mt-4"></div>
+                              <div id="progress-bar" class="progress-bar-container"></div>
+                              <div id="quiz-data" style="display: none;">
+                                   <!-- 0 -->
+                                   <div class="question"
+                                        data-question="En gæst klager over et beskidt værelse. Er det købeloven?"
+                                        data-answer="0"
+                                        data-explanation="Nej. Det er en ydelse. Se kapitel 1.">
+                                        <div class="option" data-option="Nej. Det er en ydelse"></div>
+                                        <div class="option" data-option="Ja. Alt på hotellet er købeloven"></div>
+                                        <div class="option" data-option="Ja, hvis gæsten har betalt"></div>
+                                        <div class="option" data-option="Kun hvis værelset er en suite"></div>
+                                   </div>
+
+                                   <!-- 1 -->
+                                   <div class="question"
+                                        data-question="Gæsten køber en flaske vin i shoppen. Hvilken lov?"
+                                        data-answer="1"
+                                        data-explanation="Flasken er en vare. Købeloven gælder.">
+                                        <div class="option" data-option="Pakkerejseloven"></div>
+                                        <div class="option" data-option="Købeloven"></div>
+                                        <div class="option" data-option="Kun markedsføringsloven"></div>
+                                        <div class="option" data-option="Ingen, fordi salget sker i lobbyen"></div>
+                                   </div>
+
+                                   <!-- 2 -->
+                                   <div class="question"
+                                        data-question="Firmaet køber sal, frokost og AV. Hvad er det?"
+                                        data-answer="2"
+                                        data-explanation="Sal, frokost og AV er ydelser. Købeloven gælder ikke dem.">
+                                        <div class="option" data-option="Tre varer"></div>
+                                        <div class="option" data-option="En pakkerejse"></div>
+                                        <div class="option" data-option="Ydelser"></div>
+                                        <div class="option" data-option="Handelskøb af løsøre"></div>
+                                   </div>
+
+                                   <!-- 3 -->
+                                   <div class="question"
+                                        data-question="Samme firma køber 40 flasker vand med hjem. Hvad er flaskerne?"
+                                        data-answer="3"
+                                        data-explanation="Flasker, de tager med, er varer. Hold dem adskilt fra ydelsen.">
+                                        <div class="option" data-option="En del af ydelsen, så købeloven aldrig gælder"></div>
+                                        <div class="option" data-option="Force majeure"></div>
+                                        <div class="option" data-option="Standardvilkår"></div>
+                                        <div class="option" data-option="Varer"></div>
+                                   </div>
+
+                                   <!-- 4 -->
+                                   <div class="question"
+                                        data-question="Et digitalt gavekort til en booking. Er det automatisk købeloven?"
+                                        data-answer="0"
+                                        data-explanation="En booking er ofte en ydelse. Hold dig til den konkrete aftale.">
+                                        <div class="option" data-option="Nej. En booking er ofte en ydelse"></div>
+                                        <div class="option" data-option="Ja, altid"></div>
+                                        <div class="option" data-option="Ja, hvis beløbet er under 1.000 kr."></div>
+                                        <div class="option" data-option="Ja, hvis det sendes på mail"></div>
+                                   </div>
+
+                                   <!-- 5 -->
+                                   <div class="question"
+                                        data-question="Hvad er løsøre i den her bog?"
+                                        data-answer="1"
+                                        data-explanation="Løsøre er en vare, du kan flytte. En overnatning er det ikke.">
+                                        <div class="option" data-option="En hotelnat"></div>
+                                        <div class="option" data-option="Glas, linned, badekåbe og kuffert"></div>
+                                        <div class="option" data-option="En billet"></div>
+                                        <div class="option" data-option="Et abonnement"></div>
+                                   </div>
+
+                                   <!-- 6 -->
+                                   <div class="question"
+                                        data-question="Hvornår er gæsten i shoppen typisk forbruger?"
+                                        data-answer="2"
+                                        data-explanation="Når en privat gæst køber varen til sig selv, er det forbrugerkøb.">
+                                        <div class="option" data-option="Aldrig, fordi hotellet er erhverv"></div>
+                                        <div class="option" data-option="Kun hvis varen koster over 5.000 kr."></div>
+                                        <div class="option" data-option="Når gæsten køber som privat"></div>
+                                        <div class="option" data-option="Kun ved handelskøb"></div>
+                                   </div>
+
+                                   <!-- 7 -->
+                                   <div class="question"
+                                        data-question="Hotellet køber 200 dynebetræk af en grossist. Hvilket køb?"
+                                        data-answer="0"
+                                        data-explanation="Hotellet køber til erhverv. Det er handelskøb.">
+                                        <div class="option" data-option="Handelskøb"></div>
+                                        <div class="option" data-option="Forbrugerkøb"></div>
+                                        <div class="option" data-option="Pakkerejse"></div>
+                                        <div class="option" data-option="En ydelse"></div>
+                                   </div>
+
+                                   <!-- 8 -->
+                                   <div class="question"
+                                        data-question="Skiltet siger 199 kr. Kassen trækker 249 kr. Hvad gør du?"
+                                        data-answer="1"
+                                        data-explanation="Ret det med det samme. Prisen på skiltet og i kassen skal være den samme.">
+                                        <div class="option" data-option="Bed gæsten betale differencen uden forklaring"></div>
+                                        <div class="option" data-option="Ret prisen med det samme"></div>
+                                        <div class="option" data-option="Henvis til force majeure"></div>
+                                        <div class="option" data-option="Kræv et depositum"></div>
+                                   </div>
+
+                                   <!-- 9 -->
+                                   <div class="question"
+                                        data-question="En proppet vin ved bordet. Hvor starter du?"
+                                        data-answer="3"
+                                        data-explanation="Flasken er en vare. Købeloven gælder manglen.">
+                                        <div class="option" data-option="Kun markedsføringsloven"></div>
+                                        <div class="option" data-option="Pakkerejseloven"></div>
+                                        <div class="option" data-option="Ingen lov, fordi det er service"></div>
+                                        <div class="option" data-option="Købeloven"></div>
+                                   </div>
+
+                              </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://quiz.tepedu.dk/script.js"></script>
+</body>
+</html>

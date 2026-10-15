@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta http-equiv="Content-Language" content="da">
+     <title>Quiz 3.1 om Ordliste: Ordene i receptionen</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://quiz.tepedu.dk/styles.css">
+     <link rel="icon" href="https://quiz.tepedu.dk/favicon.svg">
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body data-formål="Kunne bruge de rigtige ord, når gæsten står foran dig." data-forudsætning-url="https://juraser.tepedu.dk/kapitel3.html" data-forudsætning-text="Online-bog Jura for serviceøkonomer, kapitel3.html" data-forudsætning="">
+     <header> <a href="../index.html" target="_blank"><img src="../tepedulogoanim.svg" alt="Logo" width="8%"></a>
+          <h2>Quiz Jura for serviceøkonomer</h2>
+     </header>
+
+     <div class="container">
+          <div class="row justify-content-center">
+               <div class="col-12 col-md-12 col-lg-12">
+                    <div class="card mt-5">
+                         <div class="card-body">
+                              <div id="postProgressContent" class="mt-4" style="color: rgb(255, 255, 255);">
+                                   <div>
+                                        <h1>1. Ordene i receptionen</h1>
+                                   </div>
+                              </div>
+                              <h1 id="question" class="card-title"></h1>
+                              <div id="options" class="mt-4"></div>
+                              <div id="progress-bar" class="progress-bar-container"></div>
+                              <div id="quiz-data" style="display: none;">
+                                   <!-- 0 -->
+                                   <div class="question"
+                                        data-question="Gæsten udebliver uden at afbestille. Hvad hedder det?"
+                                        data-answer="0"
+                                        data-explanation="Udeblivelse. Branchen siger også no-show. Vilkårene afgør betalingen.">
+                                        <div class="option" data-option="Udeblivelse"></div>
+                                        <div class="option" data-option="Ophævelse"></div>
+                                        <div class="option" data-option="Afhjælpning"></div>
+                                        <div class="option" data-option="Formodningsregel"></div>
+                                   </div>
+
+                                   <!-- 1 -->
+                                   <div class="question"
+                                        data-question="Hvad er et depositum?"
+                                        data-answer="1"
+                                        data-explanation="Et beløb, gæsten betaler forud som sikkerhed. Skriv, hvornår det kommer retur.">
+                                        <div class="option" data-option="En rabat"></div>
+                                        <div class="option" data-option="Et beløb forud som sikkerhed"></div>
+                                        <div class="option" data-option="En mangel"></div>
+                                        <div class="option" data-option="En reklame"></div>
+                                   </div>
+
+                                   <!-- 2 -->
+                                   <div class="question"
+                                        data-question="Hvad er en bekræftelse?"
+                                        data-answer="2"
+                                        data-explanation="Det skriftlige bevis for bookingen: værelse, pris og afbestilling.">
+                                        <div class="option" data-option="Et mundtligt løfte i receptionen"></div>
+                                        <div class="option" data-option="Et like på Instagram"></div>
+                                        <div class="option" data-option="Mail med værelse, pris og afbestilling"></div>
+                                        <div class="option" data-option="En kreditnota"></div>
+                                   </div>
+
+                                   <!-- 3 -->
+                                   <div class="question"
+                                        data-question="Hvad er force majeure?"
+                                        data-answer="3"
+                                        data-explanation="En ekstraordinær hindring uden for din kontrol. Et travlt køkken er det ikke.">
+                                        <div class="option" data-option="Et almindeligt travlt køkken"></div>
+                                        <div class="option" data-option="En forkert pris"></div>
+                                        <div class="option" data-option="En proppet vin"></div>
+                                        <div class="option" data-option="En ekstraordinær hindring uden for din kontrol"></div>
+                                   </div>
+
+                                   <!-- 4 -->
+                                   <div class="question"
+                                        data-question="Hvad er en formidler?"
+                                        data-answer="0"
+                                        data-explanation="Den, der formidler aftalen, uden selv at være leverandør. Sig, hvem gæsten aftaler med.">
+                                        <div class="option" data-option="En platform mellem gæst og hotel"></div>
+                                        <div class="option" data-option="Altid hotellet selv"></div>
+                                        <div class="option" data-option="Kun en ankenævn"></div>
+                                        <div class="option" data-option="Kun køberen"></div>
+                                   </div>
+
+                                   <!-- 5 -->
+                                   <div class="question"
+                                        data-question="Hvad er en kreditnota?"
+                                        data-answer="1"
+                                        data-explanation="Et dokument, der trækker en tidligere faktura ned. Skriv beløb og hvilken faktura.">
+                                        <div class="option" data-option="En ny reklame"></div>
+                                        <div class="option" data-option="Et dokument, der sætter en faktura ned"></div>
+                                        <div class="option" data-option="Et depositum"></div>
+                                        <div class="option" data-option="Et samtykke"></div>
+                                   </div>
+
+                                   <!-- 6 -->
+                                   <div class="question"
+                                        data-question="Hvad er overbooking?"
+                                        data-answer="2"
+                                        data-explanation="Flere bookinger end der er plads til. Flyt gæsten, eller giv pengene tilbage.">
+                                        <div class="option" data-option="Gæsten afbestiller i tide"></div>
+                                        <div class="option" data-option="En mangel ved en vare"></div>
+                                        <div class="option" data-option="Flere bookinger end der er plads til"></div>
+                                        <div class="option" data-option="En skjult reklame"></div>
+                                   </div>
+
+                                   <!-- 7 -->
+                                   <div class="question"
+                                        data-question="Hvad er en udenretlig løsning?"
+                                        data-answer="0"
+                                        data-explanation="En løsning uden domstol. For eksempel et andet værelse og et afslag.">
+                                        <div class="option" data-option="Et andet værelse og et afslag, uden domstol"></div>
+                                        <div class="option" data-option="En dom fra byretten"></div>
+                                        <div class="option" data-option="En bøde fra Forbrugerombudsmanden"></div>
+                                        <div class="option" data-option="En ny lov"></div>
+                                   </div>
+
+                                   <!-- 8 -->
+                                   <div class="question"
+                                        data-question="Hvad er en væsentlig mangel?"
+                                        data-answer="3"
+                                        data-explanation="En fejl, der betyder noget for aftalen. Intet vand på badeværelset er væsentligt.">
+                                        <div class="option" data-option="En oplyst ridse"></div>
+                                        <div class="option" data-option="Et like"></div>
+                                        <div class="option" data-option="En rabatkode"></div>
+                                        <div class="option" data-option="En fejl, der betyder noget for aftalen"></div>
+                                   </div>
+
+                                   <!-- 9 -->
+                                   <div class="question"
+                                        data-question="Hvornår er gæstens ja en accept?"
+                                        data-answer="1"
+                                        data-explanation="Når gæsten siger ja til et tilbud, for eksempel ved at klikke Book og betale. Et like er ikke en accept.">
+                                        <div class="option" data-option="Når gæsten liker opslaget"></div>
+                                        <div class="option" data-option="Når gæsten klikker Book og betaler"></div>
+                                        <div class="option" data-option="Når du sender et nyhedsbrev"></div>
+                                        <div class="option" data-option="Når gæsten går forbi hotellet"></div>
+                                   </div>
+
+                              </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://quiz.tepedu.dk/script.js"></script>
+</body>
+</html>
