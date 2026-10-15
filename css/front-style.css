@@ -1,0 +1,647 @@
+/* Basic Reset & Globals */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Space Grotesk', sans-serif;
+    --font-thin-body: 'Roboto', sans-serif;
+    --font-book-title: 'IBM Plex Mono', monospace;
+    --font-cover-overlay: 'IBM Plex Mono', monospace;
+
+    --text-color-base: #222222;
+    --text-color-medium: #555555;
+    --text-color-light: #888888;
+    --text-color-overlay: #3f3f3f;
+    
+    --bg-color: #ffffff;
+    --header-bg: rgba(255, 255, 255, 0.9);
+    --card-bg: #ffffff;
+    --border-color: #eeeeee;
+    --footer-bg: #fdfdfd;
+
+    --card-cover-height: 350px; 
+    --card-cover-height-mobile: 280px;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.7;
+    background-color: #ffffff;
+    color: #222222;
+    overflow-x: hidden; /* Crucial */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* == FONT DEFINITIONS == */
+h1, h2, .main-nav .logo {
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #222222;
+}
+h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 0.7em; }
+h2 { font-size: 2.2rem; line-height: 1.3; margin-top: 1em; }
+.main-nav .logo { font-size: 1.7rem; font-weight: 700; min-height: 1.2em; }
+.book-card .book-info h3 {
+    font-family: var(--font-book-title); font-weight: 400; font-size: 1.5rem;
+    color: #222222; margin-bottom: 0.4em; letter-spacing: 0.01em;
+}
+/* Fallback for any other h3 if used */
+h3 { 
+    font-family: var(--font-secondary); 
+    font-weight: 500; 
+    color: var(--text-color-base);
+}
+.thin-text { 
+    font-family: var(--font-thin-body); 
+    font-weight: 100; 
+    font-size: 1.1rem; 
+    color: #555555; 
+}
+
+/* == GENERAL ELEMENT STYLES == */
+a { color: var(--text-color-medium); text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: var(--text-color-base); }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ============================================
+   ANIMATED EXTERNAL LINKS WITH ICONS
+   Kun for links i kerneteksten (ikke navbar/logo)
+   ============================================ */
+
+/* Base styling for external links (http/https) - kun i content/article området */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link) {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2px 8px;
+    margin: 0 2px;
+    border-radius: 0;
+    background-color: #d3d3d3;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(211, 211, 211, 0.2);
+}
+
+/* External link icon - appears after text */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link)::after,
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link)::after,
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link)::after,
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link)::after {
+    content: "";
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: 0.4em;
+    margin-right: 0.3em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    transform: translateX(-2px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    vertical-align: middle;
+}
+
+/* Hover effects for external links */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover,
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover,
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover,
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover {
+    color: #ffffff;
+    background-color: #b0b0b0;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(211, 211, 211, 0.35);
+}
+
+/* Icon animation on hover - superflot animation */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after {
+    opacity: 1;
+    transform: translateX(4px) scale(1.15) rotate(15deg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+}
+
+/* Active/focus state */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):focus,
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):focus,
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):focus,
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):focus {
+    outline: 2px solid #d3d3d3;
+    outline-offset: 2px;
+    border-radius: 0;
+}
+
+/* Links in info boxes */
+.content .info-box a[href^="http://"],
+.content .info-box a[href^="https://"],
+.content .example-box a[href^="http://"],
+.content .example-box a[href^="https://"],
+article .info-box a[href^="http://"],
+article .info-box a[href^="https://"],
+article .example-box a[href^="http://"],
+article .example-box a[href^="https://"] {
+    color: #ffffff;
+    background-color: #d3d3d3;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 0;
+    box-shadow: 0 2px 4px rgba(211, 211, 211, 0.2);
+}
+
+.content .info-box a[href^="http://"]:hover,
+.content .info-box a[href^="https://"]:hover,
+.content .example-box a[href^="http://"]:hover,
+.content .example-box a[href^="https://"]:hover,
+article .info-box a[href^="http://"]:hover,
+article .info-box a[href^="https://"]:hover,
+article .example-box a[href^="http://"]:hover,
+article .example-box a[href^="https://"]:hover {
+    color: #ffffff;
+    background-color: #b0b0b0;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(211, 211, 211, 0.35);
+}
+
+/* Smooth pulse animation for link icon - superflot animation */
+@keyframes linkPulse {
+    0%, 100% {
+        transform: translateX(4px) scale(1.15) rotate(15deg);
+    }
+    50% {
+        transform: translateX(6px) scale(1.25) rotate(20deg);
+    }
+}
+
+/* Superflot pulse animation on hover for extra attention */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after {
+    animation: linkPulse 1.2s ease-in-out infinite;
+}
+
+/* General link hover effects (for internal links) - ekskluder book-card links og scroll-indicator */
+a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]) {
+    color: #2563eb;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2px 4px;
+    margin: 0 2px;
+    border-radius: 0;
+    position: relative;
+}
+
+a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover {
+    color: #1d4ed8;
+    background-color: rgba(37, 99, 235, 0.08);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+/* == LAYOUT & COMPONENTS == */
+/* Navigation */
+.site-header { 
+    background-color: rgba(0, 0, 0, 0.9); padding: 0.8rem 1.5rem; /* Adjusted horizontal padding for desktop */
+    position: sticky; top: 0; left: 0; width: 100%; 
+    z-index: 1000; backdrop-filter: blur(10px); 
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.05); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+.main-nav { 
+    display: flex; justify-content: space-between; align-items: center; 
+    /* max-width: 1200px; margin: 0 auto; /* Removed for full-width content */
+}
+.main-nav > img { /* Targeting the logo image directly */
+    height: 40px; /* User confirmed size */
+    width: auto;
+    margin-left: 0; /* Align with parent's padding */
+}
+.nav-links { list-style: none; display: flex; }
+.nav-links li { margin-left: 28px; }
+.nav-links li a { 
+    font-family: var(--font-book-title);
+    color: #e0e0e0; font-weight: 300; font-size: 0.9rem; 
+    padding: 0.5rem 0; letter-spacing: 0.01em; transition: color 0.2s ease; 
+}
+.nav-links li a:hover { color: #222222; }
+
+/* Hamburger Menu */
+.hamburger-menu { 
+    display: none; background: none; border: none; padding: 0; cursor: pointer; 
+    z-index: 1001; width: 30px; height: 22px; position: relative; 
+}
+.hamburger-menu__line { 
+    display: block; width: 100%; height: 2px; 
+    background-color: #222222; 
+    border-radius: 0; position: absolute; 
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease; 
+}
+.hamburger-menu__line:nth-child(1) { top: 0; }
+.hamburger-menu__line:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.hamburger-menu__line:nth-child(3) { bottom: 0; }
+.hamburger-menu.is-active .hamburger-menu__line:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+.hamburger-menu.is-active .hamburger-menu__line:nth-child(2) { opacity: 0; }
+.hamburger-menu.is-active .hamburger-menu__line:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
+/* Hero Section */
+.hero-section { 
+    min-height: 90vh; display: flex; flex-direction: column; 
+    justify-content: center; align-items: center; text-align: center; 
+    position: relative; padding-bottom: 120px; 
+}
+.hero-content h1 { 
+    color: #222222; margin-bottom: 0.5em; font-size: 3.2rem; 
+}
+.hero-content .hero-sub-text { 
+    font-size: 1.3rem; color: #555555; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em; 
+    max-width: 650px; 
+    line-height: 1.6; 
+}
+
+/* Text Highlight Styling */
+.highlight-text { color: var(--text-color-light); }
+
+/* Typing Cursor */
+.typing-cursor { 
+    display: inline-block; width: 2px; height: 1em; 
+    background-color: currentColor; animation: blink 0.7s infinite; 
+    margin-left: 1px; position: relative; bottom: -0.15em; 
+}
+@keyframes blink { 
+    0%, 100% { opacity: 1; } 
+    50% { opacity: 0; } 
+}
+
+/* Scroll Indicator - skal være grå/sort */
+.scroll-indicator { 
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); 
+    display: flex; flex-direction: column; align-items: center; 
+    cursor: pointer; 
+    color: #555555 !important; 
+    text-decoration: none !important;
+}
+.scroll-indicator:hover { 
+    color: #222222 !important; 
+    background-color: transparent !important;
+    transform: translateX(-50%) !important;
+    box-shadow: none !important;
+}
+.scroll-indicator * {
+    color: inherit;
+}
+.scroll-text { 
+    font-family: var(--font-primary); font-size: 0.9rem; 
+    letter-spacing: 0.05em; margin-bottom: 8px; font-weight: 500; 
+}
+.arrow-down {
+    width: 28px;
+    height: 28px;
+    /* fill is currentColor from SVG HTML attribute, color inherited from .scroll-indicator */
+    animation-name: bounceArrow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes bounceArrow { 
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 
+    40% { transform: translateY(-10px); } 
+    60% { transform: translateY(-5px); } 
+}
+
+/* Standard Content Section */
+.content-section { 
+    padding: 60px 1rem; max-width: 900px; margin: 0 auto; 
+}
+
+/* Override for Hero Section to be wider */
+#hero.content-section {
+    max-width: none; /* Allow it to span full width */
+    padding-left: 1.5rem; /* Match header padding */
+    padding-right: 1.5rem; /* Match header padding */
+}
+
+/* Full Width Section */
+.full-width-section { 
+    padding-top: 60px; padding-bottom: 60px; 
+}
+.section-title-container { 
+    max-width: 900px; margin: 0 auto 2em auto; 
+    padding: 0 1rem; text-align: center; 
+}
+.section-title-container h2 {
+    color: #222222;
+}
+
+/* Book Grid */
+.book-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    width: 100%;
+}
+
+/* Single card in a grid: no empty half-column */
+.book-grid:has(> .book-card:only-child) {
+    grid-template-columns: 1fr;
+}
+
+.book-card {
+    background-color: #ffffff;
+    overflow: hidden;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 0;
+}
+.book-card:hover {
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+.book-card a {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    background-color: transparent !important;
+    padding: 1.75rem 1.5rem 1.5rem !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.book-card a:hover {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+    color: inherit !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.book-card:hover {
+    background-color: #ffffff;
+}
+
+/* Title area — no empty media/cover box */
+.book-cover-wrapper {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    position: relative;
+    overflow: visible;
+    background-color: transparent;
+    padding: 0;
+    margin: 0 0 0.75rem 0;
+}
+
+/* Hide empty placeholder image containers */
+.book-card .book-cover-image {
+    display: none !important;
+}
+
+/* Cover / chapter title with typing */
+.book-card .cover-text-overlay {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    color: #222222;
+    font-family: var(--font-cover-overlay);
+    font-size: clamp(1.35rem, 2.4vw, 2.1rem);
+    font-weight: 400;
+    text-align: left;
+    z-index: 3;
+    width: 100%;
+    min-height: 1.35em;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-shadow: none;
+}
+
+.book-card .animate-cover-text {
+    opacity: 0;
+    transform: translateY(12px) !important;
+    transition: opacity 0.45s ease-out, transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.book-card .animate-cover-text.is-visible {
+    opacity: 1;
+    transform: translateY(0) !important;
+}
+
+.book-card .book-info {
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    flex-grow: 1;
+    font-family: var(--font-book-title);
+    color: #222222;
+}
+
+.book-card .author {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.book-card .book-info p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* CTA Link Styling (Palantir-inspired) */
+.cta-link-container {
+    margin-top: 1.5rem; 
+}
+
+.styled-cta-link {
+    display: inline-flex; /* Crucial for icon and text on same line */
+    align-items: center; /* Vertically aligns icon and text */
+    gap: 0.4em; /* Consistent spacing using em, replaces .link-icon margin-right */
+    position: relative; 
+    color: #222222;
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace; 
+    font-size: 0.9rem;
+    font-weight: 400; 
+    transition: color 0.2s ease;
+}
+
+/* Remove dash style */
+.styled-cta-link::before {
+    content: "";
+    margin-right: 0;
+}
+
+.link-icon {
+    display: inline-block;
+    width: 1em; 
+    height: 1em; 
+    vertical-align: middle; /* Explicitly try to vertically align with text */
+    /* margin-right: 0.4em; /* Replaced by gap on parent */
+    background-color: currentColor; 
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10 6V8H5V19H16V14H18V19C18 20.1046 17.1046 21 16 21H5C3.89543 21 3 20.1046 3 19V8C3 6.89543 3.89543 6 5 6H10ZM17 3H21V7H19V4.41421L13.4142 10L12 8.58579L17.5858 3H17V3Z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10 6V8H5V19H16V14H18V19C18 20.1046 17.1046 21 16 21H5C3.89543 21 3 20.1046 3 19V8C3 6.89543 3.89543 6 5 6H10ZM17 3H21V7H19V4.41421L13.4142 10L12 8.58579L17.5858 3H17V3Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+    transform: translateX(-5px); /* Start slightly to the left for animation */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.styled-cta-link:hover {
+    color: #b0b0b0; 
+    text-decoration: underline;
+    text-underline-offset: 0.2em; 
+}
+
+/* Remove hover style for dash */
+.styled-cta-link:hover::before {
+    opacity: 0; 
+}
+
+.styled-cta-link:hover .link-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Footer */
+.site-footer { 
+    background-color: #fdfdfd; text-align: center; 
+    padding: 2.5rem 1rem; margin-top: 5rem; 
+    font-size: 0.9rem; color: #555555; 
+    border-top: 1px solid #eeeeee; 
+}
+
+/* == ANIMATIONS == */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1),
+                transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.animate-on-scroll.hero-content h1,
+.animate-on-scroll.section-title-container h2 { 
+    transform: translateY(50px); /* Initial state for these is covered by .animate-on-scroll */
+    /* transition-delay is handled by JS or defaults based on parent */
+}
+.animate-on-scroll.hero-sub-text { 
+    transition-delay: 0.1s; /* Specific CSS delay for this one */
+}
+
+/* == RESPONSIVE ADJUSTMENTS == */
+@media (max-width: 768px) {
+    h1 { font-size: 2.4rem; }
+    .hero-content h1 { font-size: 2.6rem; }
+    .hero-content .hero-sub-text { font-size: 1.15rem; }
+    h2 { font-size: 1.9rem; }
+    .book-card .book-info h3 { font-size: 1.3rem; }
+    
+    .cover-text-overlay { font-size: 2.2rem; }
+    .animate-cover-text {
+        transform: translate(-50%, calc(-50% + 25px));
+    }
+
+    .book-grid,
+    .book-grid.single-column-sm { grid-template-columns: 1fr; }
+    
+    .book-cover-wrapper { height: var(--card-cover-height-mobile); }
+    
+    .site-header { padding: 0.8rem 1rem; }
+    .main-nav .nav-links { 
+        position: fixed; top: 0; right: 0; width: 75%; height: 100vh; 
+        background-color: var(--bg-color); flex-direction: column; 
+        align-items: center; justify-content: center; 
+        transform: translateX(100%); 
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); 
+        box-shadow: -2px 0 15px rgba(0,0,0,0.1); padding-top: 60px; 
+    }
+    .main-nav .nav-links.is-active { transform: translateX(0); }
+    .main-nav .nav-links li { margin: 1.5rem 0; }
+    .main-nav .nav-links li a { font-size: 1.2rem; color: var(--text-color-base); }
+    .main-nav .nav-links li a:hover { color: var(--text-color-medium); }
+    .hamburger-menu { display: block; }
+    .content-section { padding: 40px 1rem; }
+    .full-width-section { padding-top: 40px; padding-bottom: 40px; }
+    .section-title-container { padding: 0 1rem; }
+    .hero-section { padding-bottom: 100px; min-height: 80vh; }
+    .scroll-indicator { bottom: 25px; }
+}
+
+/* Additional media query for very narrow screens (e.g., smaller phones in portrait) */
+@media (max-width: 420px) {
+    .hero-content h1 {
+        font-size: 1.8rem; /* Further reduce font size for hero title */
+        /* Consider letter-spacing: -0.03em; if text still feels too wide */
+    }
+
+    .hero-content .hero-sub-text {
+        font-size: 1rem; /* Adjust sub-text if needed too */
+    }
+}
+
+/* Dark theme for front page when toggled */
+[data-theme="dark"] body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+[data-theme="dark"] .hero-content h1,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] .del-heading {
+    color: #ffffff !important;
+}
+[data-theme="dark"] .hero-content .hero-sub-text,
+[data-theme="dark"] .book-card .book-info p,
+[data-theme="dark"] .scroll-indicator {
+    color: #e0e0e0 !important;
+}
+[data-theme="dark"] .book-card,
+[data-theme="dark"] .book-card:hover,
+[data-theme="dark"] .book-card .book-info {
+    background-color: #000000 !important;
+}
+[data-theme="dark"] .book-card {
+    border-bottom-color: #2a2a2a;
+}
+[data-theme="dark"] .book-cover-wrapper {
+    background-color: transparent !important;
+}
+[data-theme="dark"] .book-card .cover-text-overlay {
+    color: #ffffff !important;
+}
+[data-theme="dark"] .book-card a:hover {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+}

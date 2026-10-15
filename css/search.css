@@ -1,0 +1,200 @@
+/* search.css */
+
+.search-container {
+    position: relative;
+    margin-right: 15px;
+}
+
+/* Very aggressive overrides to ensure marine color and correct size */
+.navbar #search-toggle.search-toggle,
+.navbar-nav .nav-item #search-toggle.search-toggle,
+#search-toggle.search-toggle {
+    color: var(--text-secondary) !important;
+    cursor: pointer !important;
+    font-size: 1.1rem !important;
+    padding: 5px !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+
+#search-toggle.search-toggle i.bi,
+#search-toggle.search-toggle i.bi-search {
+    font-size: 1.1rem !important;
+    color: var(--text-secondary) !important;
+    transition: color 0.3s ease !important;
+}
+
+/* Hover state - Marine Blue */
+#search-toggle.search-toggle:hover,
+#search-toggle.search-toggle:hover i.bi,
+#search-toggle.search-toggle:hover i.bi-search,
+.navbar-nav .nav-item #search-toggle.search-toggle:hover,
+.navbar-nav .nav-item #search-toggle.search-toggle:hover i.bi {
+    color: #0f6d5c !important;
+    background-color: transparent !important;
+    transform: scale(1.1);
+}
+
+/* Dark mode hover */
+[data-theme="dark"] #search-toggle.search-toggle:hover,
+[data-theme="dark"] #search-toggle.search-toggle:hover i.bi,
+[data-theme="dark"] #search-toggle.search-toggle:hover i.bi-search,
+[data-theme="dark"] .navbar-nav .nav-item #search-toggle.search-toggle:hover,
+[data-theme="dark"] .navbar-nav .nav-item #search-toggle.search-toggle:hover i.bi {
+    color: #3aa88f !important;
+    background-color: transparent !important;
+}
+
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 350px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 1050;
+    margin-top: 10px;
+    border-radius: 0;
+    overflow: hidden;
+    animation: dropdownSlide 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes dropdownSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.search-dropdown.show {
+    display: block;
+}
+
+.search-input-wrapper {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--accent-marine-light);
+}
+
+.search-input {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 0;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    outline: none;
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.search-input:focus {
+    border-color: var(--accent-marine);
+}
+
+.search-results {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.search-result-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background: var(--accent-marine-light);
+    text-decoration: none;
+}
+
+.search-result-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent-marine);
+    margin-bottom: 4px;
+    display: block;
+}
+
+.search-result-context {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    display: block;
+}
+
+.search-result-chapter {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.search-no-results {
+    padding: 20px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .search-dropdown {
+    background: #121212;
+    border-color: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .search-input {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+/* Flash effect for landing on an element */
+@keyframes search-flash {
+    0% { background-color: transparent; }
+    50% { background-color: rgba(15, 109, 92, 0.2); }
+    100% { background-color: transparent; }
+}
+
+.search-target-flash {
+    animation: search-flash 2s ease-in-out;
+}
+
+/* Persistent highlight for searched terms */
+.search-highlight-persistent {
+    background-color: #fff3cd; /* Light yellow like browser search */
+    border-bottom: 2px solid #ffc107;
+    border-radius: 0;
+    padding: 0 2px;
+    color: #000 !important;
+}
+
+[data-theme="dark"] .search-highlight-persistent {
+    background-color: rgba(255, 193, 7, 0.3);
+    border-bottom-color: #ffc107;
+    color: #fff !important;
+}

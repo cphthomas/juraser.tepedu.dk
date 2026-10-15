@@ -1,0 +1,1408 @@
+/* styles.css */
+body {
+    font-family: 'Inter', 'Roboto', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 56px;
+    /* Adjust for fixed navbar height */
+}
+
+
+/* Light theme is default — white surfaces */
+html:not([data-theme="dark"]),
+html[data-theme="light"] {
+    color-scheme: light;
+}
+
+html:not([data-theme="dark"]) body,
+html[data-theme="light"] body,
+body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+html[data-theme="dark"] body {
+    background-color: #000000;
+    color: #e0e0e0;
+}
+
+/* ============================================
+   ANIMATED EXTERNAL LINKS WITH ICONS
+   Kun for links i kerneteksten (ikke navbar/logo)
+   ============================================ */
+
+/* Base styling for external links (http/https) - kun i content/article området */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link) {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.5px 8px;
+    margin: 0 2px;
+    border-radius: 0;
+    background-color: #d3d3d3;
+    font-weight: 500;
+    line-height: 1.2;
+    box-shadow: 0 1px 2px rgba(211, 211, 211, 0.15);
+}
+
+/* External link icon - appears after text */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link)::after,
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link)::after,
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link)::after,
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link)::after {
+    content: "";
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: 0.4em;
+    margin-right: 0.3em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    transform: translateX(-2px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    vertical-align: middle;
+}
+
+/* Hover effects for external links */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover,
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover,
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover,
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover {
+    color: #ffffff;
+    background-color: #b0b0b0;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(211, 211, 211, 0.35);
+}
+
+/* Icon animation on hover - superflot animation */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after {
+    opacity: 1;
+    transform: translateX(4px) scale(1.15) rotate(15deg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+}
+
+/* Active/focus state */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):focus,
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):focus,
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):focus,
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):focus {
+    outline: 2px solid #d3d3d3;
+    outline-offset: 2px;
+    border-radius: 0;
+}
+
+/* Links in tables - adjust styling */
+.content table a[href^="http://"]:not(.effectLinksTable),
+.content table a[href^="https://"]:not(.effectLinksTable),
+article table a[href^="http://"]:not(.effectLinksTable),
+article table a[href^="https://"]:not(.effectLinksTable) {
+    color: #ffffff !important;
+    background-color: #d3d3d3;
+    font-weight: 500;
+    padding: 0 8px;
+    line-height: 1.2;
+    border-radius: 0;
+    box-shadow: 0 1px 2px rgba(211, 211, 211, 0.15);
+}
+
+.content table a[href^="http://"]:not(.effectLinksTable):hover,
+.content table a[href^="https://"]:not(.effectLinksTable):hover,
+article table a[href^="http://"]:not(.effectLinksTable):hover,
+article table a[href^="https://"]:not(.effectLinksTable):hover {
+    color: #ffffff;
+    background-color: #b0b0b0;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(211, 211, 211, 0.35);
+}
+
+/* Links in info boxes - external links (exclude effectLinks - they have their own styling) */
+.content .info-box a[href^="http://"]:not(.effectLinks),
+.content .info-box a[href^="https://"]:not(.effectLinks),
+.content .example-box a[href^="http://"]:not(.effectLinks),
+.content .example-box a[href^="https://"]:not(.effectLinks),
+article .info-box a[href^="http://"]:not(.effectLinks),
+article .info-box a[href^="https://"]:not(.effectLinks),
+article .example-box a[href^="http://"]:not(.effectLinks),
+article .example-box a[href^="https://"]:not(.effectLinks) {
+    color: #ffffff !important;
+    background-color: #d3d3d3;
+    font-weight: 500;
+    padding: 0 8px;
+    line-height: 1.2;
+    border-radius: 0;
+    box-shadow: 0 1px 2px rgba(211, 211, 211, 0.15);
+}
+
+.content .info-box a[href^="http://"]:not(.effectLinks):hover,
+.content .info-box a[href^="https://"]:not(.effectLinks):hover,
+.content .example-box a[href^="http://"]:not(.effectLinks):hover,
+.content .example-box a[href^="https://"]:not(.effectLinks):hover,
+article .info-box a[href^="http://"]:not(.effectLinks):hover,
+article .info-box a[href^="https://"]:not(.effectLinks):hover,
+article .example-box a[href^="http://"]:not(.effectLinks):hover,
+article .example-box a[href^="https://"]:not(.effectLinks):hover {
+    color: #ffffff;
+    background-color: #b0b0b0;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(211, 211, 211, 0.35);
+}
+
+/* Links in info boxes - internal links (same styling as external) */
+.content .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]),
+.content .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]),
+article .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]),
+article .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]) {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.5px 8px;
+    margin: 0 2px;
+    border-radius: 0;
+    background-color: #d3d3d3;
+    font-weight: 500;
+    line-height: 1.2;
+    box-shadow: 0 1px 2px rgba(211, 211, 211, 0.15);
+}
+
+/* Internal link icon in info boxes */
+.content .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"])::after,
+.content .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"])::after,
+article .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"])::after,
+article .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"])::after {
+    content: "";
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: 0.4em;
+    margin-right: 0.3em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    transform: translateX(-2px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    vertical-align: middle;
+}
+
+.content .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover,
+.content .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover,
+article .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover,
+article .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover {
+    color: #ffffff;
+    background-color: #b0b0b0;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(211, 211, 211, 0.35);
+}
+
+.content .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover::after,
+.content .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover::after,
+article .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover::after,
+article .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover::after {
+    opacity: 1;
+    transform: translateX(4px) scale(1.15) rotate(15deg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+    animation: linkPulse 1.2s ease-in-out infinite;
+}
+
+/* Smooth pulse animation for link icon - superflot animation */
+@keyframes linkPulse {
+
+    0%,
+    100% {
+        transform: translateX(4px) scale(1.15) rotate(15deg);
+    }
+
+    50% {
+        transform: translateX(6px) scale(1.25) rotate(20deg);
+    }
+}
+
+/* Superflot pulse animation on hover for extra attention */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after,
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover::after {
+    animation: linkPulse 1.2s ease-in-out infinite;
+}
+
+/* ============================================
+   INTERNAL LINKS - SAME STYLING AS EXTERNAL LINKS
+   ============================================ */
+
+/* Base styling for internal links (not http/https, not anchor, not mailto) - kun i content/article området */
+.content a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]),
+article a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]) {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.5px 8px;
+    margin: 0 2px;
+    border-radius: 0;
+    background-color: #d3d3d3;
+    font-weight: 500;
+    line-height: 1.2;
+    box-shadow: 0 1px 2px rgba(211, 211, 211, 0.15);
+}
+
+/* Internal link icon - appears after text */
+.content a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"])::after,
+article a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"])::after {
+    content: "";
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: 0.4em;
+    margin-right: 0.3em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    transform: translateX(-2px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    vertical-align: middle;
+}
+
+/* Hover effects for internal links */
+.content a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover,
+article a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover {
+    color: #ffffff;
+    background-color: #b0b0b0;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(211, 211, 211, 0.35);
+}
+
+/* Icon animation on hover for internal links */
+.content a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover::after,
+article a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover::after {
+    opacity: 1;
+    transform: translateX(4px) scale(1.15) rotate(15deg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+}
+
+/* Pulse animation on hover for internal links */
+.content a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover::after,
+article a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover::after {
+    animation: linkPulse 1.2s ease-in-out infinite;
+}
+
+/* Anchor links (hash links) - subtle hover */
+a[href^="#"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link) {
+    color: #2563eb;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a[href^="#"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.transparent-navbar {
+    background-color: rgba(248, 249, 250, 0.8);
+    /* Light grey with transparency */
+}
+
+.content {
+    transition: margin-left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    margin-left: 0;
+    /* Default to no margin */
+}
+
+.pl-0 {
+    padding-left: 0 !important;
+}
+
+.pl-3 {
+    padding-left: 1rem !important;
+}
+
+.pl-5 {
+    padding-left: 1.5rem !important;
+}
+
+.pl-7 {
+    padding-left: 2rem !important;
+}
+
+/* Override Bootstrap primary color */
+.btn-primary {
+    background-color: grey;
+    border-color: grey;
+}
+
+.btn-primary:hover {
+    background-color: darkgrey;
+    border-color: darkgrey;
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: grey;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: grey;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: darkgrey;
+}
+
+.dropdown-menu {
+    background-color: rgba(223, 223, 223, 0.97);
+    border-radius: 0;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 260px;
+    max-width: min(400px, 92vw);
+    padding: 0.1rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.dropdown-menu .dropdown-item {
+    font-family: var(--font-ui, 'IBM Plex Mono', monospace);
+    font-size: 0.65rem;
+    font-weight: 400;
+    line-height: 1.15;
+    white-space: normal;
+    padding: 0.08rem 0.7rem;
+    color: #333;
+    transition: font-weight 0.1s ease, background-color 0.1s ease, color 0.1s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: rgba(15, 109, 92, 0.32) !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+.content {
+    margin-left: 200px;
+    /* Same as #page-menu width */
+    padding-top: 40px;
+    /* Increased padding-top for more space */
+}
+
+.navbar-nav .nav-item {
+    margin-left: 40px;
+}
+
+/* Ensure the navbar doesn't overflow */
+.navbar-nav {
+    flex-wrap: nowrap;
+}
+
+/* Section headings alignment to match Makro style */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    /* Space Grotesk for modern academic look */
+    font-weight: 700 !important;
+    font-style: normal;
+    text-align: left;
+    /* Left-aligned to match the image style */
+    scroll-margin-top: 70px;
+    margin-top: 2em;
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+.content h1 {
+    font-size: 4.5rem;
+    /* Large for chapter title */
+    letter-spacing: -0.03em;
+    margin-top: 0;
+    /* Remove top margin if it's the chapter title */
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    /* Subchapter size */
+    letter-spacing: -0.02em;
+}
+
+.content h3 {
+    font-size: 1.8rem;
+    /* Sub-subchapter size */
+    letter-spacing: -0.01em;
+}
+
+.content h4 {
+    font-size: 1.4rem;
+    /* Minor section size */
+}
+
+/* styles.css */
+
+/* ... existing styles ... */
+
+/* Increase right padding of the content container */
+.content-container {
+    padding-right: 50px;
+    /* Increase this value as needed */
+}
+
+/* Increase right padding on larger screens */
+@media (min-width: 1200px) {
+    .content-container {
+        padding-right: 150px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .content-container {
+        padding-right: 200px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .content-container {
+        padding-right: 250px;
+    }
+}
+
+.navbar-nav .nav-link .bi {
+    font-size: 1.6em;
+    /* Increase font size by 60% */
+    vertical-align: middle;
+    /* Adjust vertical alignment if necessary */
+}
+
+/* Increase the size of the page TOC icon (#menu-icon) */
+#menu-icon .bi {
+    font-size: 1.6em;
+    /* Increase font size by 60% */
+    vertical-align: middle;
+    /* Adjust vertical alignment if necessary */
+}
+
+/* Increase the width of #page-menu on larger screens */
+@media (min-width: 992px) {
+    #page-menu {
+        width: 380px;
+        /* New width (200px + 60%) */
+    }
+
+    /* Adjust the left margin of .content to match the new #page-menu width */
+    .content {
+        margin-left: 380px;
+        /* Same as #page-menu width */
+    }
+}
+
+table {
+    font-size: 0.8em;
+    /* Adjust the value as needed */
+}
+
+.effectLinks {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: #d3d3d3;
+    padding: 15px 20px;
+    width: 100%;
+    transition: background 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+    margin-bottom: 0;
+}
+
+.effectLinks::after {
+    content: attr(data-replace);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px 20px;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
+    color: white;
+    background: rgba(21, 23, 26, 1);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.effectLinks:hover::after {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.effectLinks:hover {
+    background: rgba(21, 23, 26, 1);
+    color: white;
+}
+
+.effectLinks span {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.effectLinks:hover span {
+    transform: translate3d(-200%, 0, 0);
+}
+
+/* Container for quiz links */
+.quiz-container {
+    padding: 30px 20px;
+    margin: 20px 0;
+    background-color: transparent !important;
+    border: none !important;
+    border-left: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+/* Ensure quiz-container doesn't inherit info-box styling even if nested */
+.info-box .quiz-container,
+.quiz-container {
+    background-color: transparent !important;
+    border: none !important;
+    border-left: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.info-box .quiz-container:hover,
+.quiz-container:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.quiz-container br {
+    display: block;
+    margin: 10px 0;
+    content: "";
+}
+
+.effectLinksTable {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(57, 56, 56);
+    /* Changed from white to black */
+    background: none;
+    /* Removed background color */
+    padding: 0px;
+    width: 100%;
+}
+
+.effectLinksTable::after {
+    content: attr(data-replace);
+    position: absolute;
+    left: 0;
+    padding-left: 10px;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
+    /* added opacity transition */
+    color: black;
+    background: none;
+    opacity: 0;
+    /* added this line */
+}
+
+.effectLinksTable:hover::after {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    /* added this line */
+}
+
+.effectLinksTable:hover {
+    background: none;
+    /* Removed background color */
+    /* color: rgb(43, 150, 226) */
+    color: white;
+}
+
+.effectLinksTable::after {
+    content: attr(data-replace);
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.effectLinksTable:hover::after {
+    transform: translate3d(0, 0, 0);
+    /* color: rgb(43, 150, 226) */
+    color: white;
+}
+
+.effectLinksTable span {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.effectLinksTable:hover span {
+    transform: translate3d(-200%, 0, 0);
+}
+
+kbd23 {
+    font-style: italic;
+    font-family: inherit;
+    /* This makes the <kbd> tag inherit the body's font */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    padding: 4px 8px;
+    color: #333;
+}
+
+kbd {
+    background-color: #f0f0f0;
+    border: 1px solid #bbb;
+    border-radius: 0;
+    padding: 4px 8px;
+    font-family: "Courier New", monospace;
+    color: #333;
+}
+
+.no-rounded-corners {
+    border-radius: 0 !important;
+}
+
+.no-rounded-corners .card-body {
+    border-radius: 0 !important;
+}
+
+.no-rounded-corners img {
+    border-radius: 0 !important;
+}
+
+.info-box {
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 !important;
+    /* No rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for hover */
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    /* Lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    /* Enhanced shadow on hover */
+}
+
+.chart-container {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.chart-container.square,
+.square {
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+}
+
+.wide {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.figure-container {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.example-box {
+    background-color: rgba(15, 109, 92, 0.05);
+    border: 1px solid rgba(15, 109, 92, 0.15);
+    border-left: 5px solid #0f6d5c;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.example-box:hover {
+    transform: translateY(-5px);
+    /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow on hover */
+}
+
+/* Style for negative examples in tables - svag rød */
+.bad-example td {
+    background-color: rgba(248, 215, 218, 0.3);
+    /* Svag rød baggrund */
+    color: inherit;
+    /* Behold normal tekstfarve */
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(15, 109, 92, 0.06);
+}
+
+.table th,
+.table td {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: none !important;
+}
+
+/* Custom styles for square corners on cards */
+.card,
+.card-body {
+    border-radius: 0 !important;
+    /* Override default Bootstrap/MDB styles */
+}
+
+.table,
+.table th,
+.table td {
+    border-radius: 0 !important;
+}
+
+.book-cover-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    max-height: 600px;
+    overflow: hidden;
+    margin: 20px 0;
+    /* Match info-box margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.book-cover-wrapper video,
+.book-cover-wrapper img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 600px;
+    background-color: white;
+    /* Hide Safari's default video controls and poster */
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Hide Safari's default video controls when src is empty */
+.book-cover-wrapper video::-webkit-media-controls {
+    display: none !important;
+}
+
+.book-cover-wrapper video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+.book-cover-wrapper video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+/* Ensure video doesn't show poster or default UI in Safari */
+.book-cover-wrapper video:not([src]),
+.book-cover-wrapper video[src=""] {
+    background-color: white !important;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cover-text-overlay {
+    font-family: 'Space Grotesk', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 6rem;
+    /* Increased from 5rem for WOW factor */
+    font-weight: 800;
+    /* Extra bold */
+    color: #d3d3d3;
+    text-shadow: none;
+    font-style: normal;
+    z-index: 2;
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 40px));
+    /* Start slightly lower */
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    letter-spacing: -0.02em;
+    text-align: center;
+    width: 90%;
+}
+
+.animate-cover-text.is-visible {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    /* Perfect center on finish */
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: currentColor;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Left-aligned TOC sidebar */
+#left-aligned-sidebar {
+    position: fixed;
+    top: 56px;
+    /* Adjust for navbar height */
+    left: -300px;
+    /* Start off-screen */
+    width: 300px;
+    height: calc(100% - 56px);
+    background-color: rgba(248, 249, 250, 0.95);
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto;
+    transition: left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1029;
+    /* Below navbar (1030) */
+}
+
+#left-aligned-sidebar.open {
+    left: 0;
+}
+
+.content.sidebar-open {
+    margin-left: 300px;
+}
+
+
+#left-aligned-sidebar h4 {
+    margin-top: 0;
+    font-weight: 500;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#left-aligned-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#left-aligned-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 5px 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    /* Lighter font weight */
+    transition: font-weight 0.2s ease;
+}
+
+#left-aligned-sidebar ul li a:hover,
+#left-aligned-sidebar ul li a:focus {
+    font-weight: 700;
+    /* Bolder on hover/focus */
+}
+
+/* Sidebar Toggle Button */
+#sidebar-toggle-button {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 1032;
+    background: transparent;
+    /* Default to transparent */
+    color: white;
+    border: 2px solid transparent;
+    /* Default to transparent border */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    line-height: 0;
+    /* Reset line-height for centering */
+    display: flex;
+    /* Use flexbox for centering */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#sidebar-toggle-button:hover,
+#sidebar-toggle-button:focus,
+#sidebar-toggle-button:active {
+    /* Add focus for keyboard navigation and active for clicks */
+    background: #d3d3d3;
+    /* Light grey on hover/focus/active */
+    border: 2px solid #d3d3d3;
+    /* Light grey border on hover/focus/active */
+    transform: translateY(-50%) scale(1.1);
+    outline: none;
+    /* Remove blue outline on focus */
+}
+
+/* Default state for the button when not hovered or focused */
+#sidebar-toggle-button:not(:hover):not(:focus) {
+    background: #868e96;
+    /* Modern grey */
+    border: 2px solid #868e96;
+    /* Modern grey border */
+}
+
+#sidebar-toggle-button.open {
+    left: 320px;
+    /* Move button with sidebar */
+}
+
+
+#sidebar-toggle-button .icon-open,
+#sidebar-toggle-button .icon-close {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#sidebar-toggle-button .icon-close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+}
+
+#sidebar-toggle-button.open .icon-open {
+    transform: scale(0);
+    opacity: 0;
+}
+
+#sidebar-toggle-button.open .icon-close {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+
+/* CRITICAL FIX: Prevent wrapping of legal symbols and numbers in badges */
+.content table td a[href],
+article table td a[href],
+.info-box a[href],
+.example-box a[href],
+.legal-term-link {
+    /* Added a class just in case we need it later */
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center;
+    padding: 1px 6px !important;
+    /* Tighter padding */
+    border-radius: 0 !important;
+    /* SQUARE corners as requested */
+    line-height: 1.2 !important;
+    /* Fixed line height for better fit */
+    font-size: 0.85em !important;
+    /* Smaller font inside the box */
+    vertical-align: middle;
+}
+
+.content table th {
+    white-space: nowrap;
+}
+
+/* Override Bootstrap and other framework rounded corners for all containers */
+.alert,
+.alert-info,
+.alert-success,
+.alert-warning,
+.alert-danger,
+.card,
+.card-body,
+.modal-content,
+.dropdown-menu,
+.btn,
+.badge,
+.container,
+.container-fluid {
+    border-radius: 0 !important;
+}
+
+/* ============================================
+   THEME TOGGLE BUTTON - ANIMATED SUN / MOON
+   Default: light (white). Click toggles dark.
+   ============================================ */
+#theme-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 8px;
+    border-radius: 50%;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                background-color 0.3s ease,
+                box-shadow 0.35s ease;
+}
+
+#theme-toggle::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.12);
+}
+
+#theme-toggle:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+[data-theme="dark"] #theme-toggle::before {
+    background: radial-gradient(circle, rgba(147, 197, 253, 0.22) 0%, transparent 70%);
+}
+
+#theme-toggle:active {
+    transform: scale(0.92);
+}
+
+#theme-toggle.theme-pop {
+    animation: themePop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes themePop {
+    0% { transform: scale(1); }
+    35% { transform: scale(1.22); }
+    100% { transform: scale(1); }
+}
+
+.theme-icon-wrapper {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-icon-wrapper.is-switching {
+    animation: themeFlip 0.6s cubic-bezier(0.68, -0.4, 0.32, 1.4);
+}
+
+@keyframes themeFlip {
+    0% { transform: rotate(0deg) scale(1); }
+    40% { transform: rotate(160deg) scale(0.55); }
+    70% { transform: rotate(280deg) scale(1.15); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.theme-icon-sun,
+.theme-icon-moon {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    transition:
+        opacity 0.4s ease,
+        transform 0.55s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        filter 0.35s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.theme-icon-sun {
+    color: #f59e0b;
+    transform: rotate(-110deg) scale(0.35);
+    filter: drop-shadow(0 0 0 transparent);
+}
+
+.theme-icon-moon {
+    color: #64748b;
+    transform: rotate(110deg) scale(0.35);
+    filter: drop-shadow(0 0 0 transparent);
+}
+
+.theme-icon-sun.active,
+.theme-icon-moon.active {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    pointer-events: auto;
+}
+
+.theme-icon-sun.active {
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.55));
+    animation: sunIdle 4s ease-in-out infinite;
+}
+
+.theme-icon-moon.active {
+    color: #93c5fd;
+    filter: drop-shadow(0 0 7px rgba(147, 197, 253, 0.55));
+    animation: moonIdle 5s ease-in-out infinite;
+}
+
+@keyframes sunIdle {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(12deg) scale(1.06); }
+}
+
+@keyframes moonIdle {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(-8deg) scale(1.05); }
+}
+
+/* Smooth page theme transition */
+html {
+    color-scheme: light;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+body,
+.content,
+.navbar,
+.transparent-navbar,
+.book-card,
+.info-box,
+.example-box,
+.dropdown-menu,
+#left-aligned-sidebar {
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* ============================================
+   MODERN & ANIMATED ICONS
+   ============================================ */
+.modern-icon {
+    display: inline-block;
+    color: var(--theme-primary, #0f6d5c);
+    margin-right: 0.8rem !important;
+    font-size: 1.2em;
+    vertical-align: middle;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+h2 .modern-icon,
+h3 .modern-icon,
+h4 .modern-icon {
+    font-size: 1.3em;
+    margin-right: 1rem !important;
+}
+
+.modern-icon:hover {
+    transform: scale(1.25) rotate(5deg);
+    color: var(--theme-secondary, #3d6b8e);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Floating animation */
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+.icon-float {
+    animation: iconFloat 4s ease-in-out infinite;
+}
+
+/* Gentle pulse */
+@keyframes iconPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+}
+
+.icon-pulse {
+    animation: iconPulse 3s ease-in-out infinite;
+}
+
+/* Spin on hover */
+.icon-spin-hover:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+/* Subtle accent for info boxes */
+.info-box .modern-icon {
+    color: var(--theme-secondary, #3d6b8e);
+}
+
+/* Chapter banner (replaces video-cover in books without media assets) */
+.chapter-banner {
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+    margin: 20px 0;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--accent-marine, #0f6d5c) 0%, #0a4436 100%);
+}
+
+.chapter-banner .cover-text-overlay,
+.chapter-banner .banner-title {
+    position: static;
+    color: #ffffff;
+    opacity: 1;
+    transform: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-style: normal;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.chapter-banner .banner-part-label,
+.chapter-banner .banner-eyebrow {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .chapter-banner .cover-text-overlay,
+    .chapter-banner .banner-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Dark theme dropdown */
+[data-theme="dark"] .dropdown-menu {
+    background-color: rgba(26, 26, 26, 0.98);
+    border: 1px solid #404040;
+}
+[data-theme="dark"] .dropdown-menu .dropdown-item {
+    color: #e0e0e0;
+    font-weight: 400;
+}
+[data-theme="dark"] .dropdown-item:hover,
+[data-theme="dark"] .dropdown-item:focus {
+    background-color: rgba(58, 168, 143, 0.42) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+[data-theme="dark"] #left-aligned-sidebar {
+    background-color: rgba(18, 18, 18, 0.97);
+    border-right-color: #404040;
+}
+[data-theme="dark"] #left-aligned-sidebar ul li a {
+    color: #e0e0e0;
+}
+
+
+/* Display fonts for nav/sidebar labels (FRONT/Font stack) */
+.sidebar-title,
+#left-aligned-sidebar h4,
+#left-aligned-sidebar h5 {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-style: normal;
+    font-weight: 600;
+}
+.navbar-brand,
+.nav-link {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Square UI chrome + IBM Plex Mono on buttons/menus (ejendom charts UI) */
+.navbar .nav-link,
+.navbar .dropdown-item,
+.navbar .dropdown-toggle,
+.navbar .btn,
+.sidebar a,
+.sidebar-toggle,
+.btn {
+    font-family: 'IBM Plex Mono', monospace !important;
+    border-radius: 0 !important;
+}
+.navbar .dropdown-menu,
+.btn,
+.form-control {
+    border-radius: 0 !important;
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('tepedu-theme');
+                document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Købeloven - Servicejura</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@100;400;500&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme-dark.css">
+    <link rel="stylesheet" href="css/link-contrast.css">
+    <link rel="stylesheet" href="css/chapters-shared.css">
+    <link rel="stylesheet" href="css/glossary.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/square.css">
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand navbar-light transparent-navbar fixed-top">
+        <div class="container-fluid">
+            <a href="https://tepedu.dk/" target="_blank" rel="noopener noreferrer">
+                <img src="tepedulogoanim.svg" alt="Te Pedu Logo" style="height:35px; margin-right:15px;">
+            </a>
+            <a class="navbar-brand" href="index.html"><i class="bi bi-house-door"></i></a>
+            <ul class="navbar-nav ml-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" id="theme-toggle" href="#" role="button" aria-label="Skift tema">
+                        <div class="theme-icon-wrapper">
+                            <svg class="theme-icon-sun active" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                            <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <div class="search-container">
+                        <a class="nav-link search-toggle" id="search-toggle" href="#" role="button" aria-label="Søg"><i class="bi bi-search"></i></a>
+                        <div class="search-dropdown" id="search-dropdown">
+                            <div class="search-input-wrapper">
+                                <input type="text" class="search-input" id="search-input" placeholder="Søg i alle kapitler..." autocomplete="off">
+                            </div>
+                            <div class="search-results" id="search-results">
+                                <div class="search-no-results">Indtast søgeord foroven</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-list icon-margin"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink"></div>
+                </li>
+                <li class="nav-item"><a class="nav-link" id="prev-page-link" href="kapitel1.html"><i class="bi bi-arrow-left"></i></a></li>
+                <li class="nav-item"><a class="nav-link" id="next-page-link" href="kapitel3.html"><i class="bi bi-arrow-right"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="left-aligned-sidebar" class="sidebar">
+        <button id="sidebar-toggle-button" class="sidebar-toggle" aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
+        <div class="sidebar-content">
+            <h5 class="sidebar-title">Indholdsfortegnelse</h5>
+            <ul id="sidebar-toc" class="list-unstyled"></ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container mt-4">
+            <article>
+                <h1 style="display:none;">Købeloven</h1>
+                <div class="chapter-banner">
+                    <div>
+                        <span class="banner-part-label">Service- og oplevelsesøkonom</span>
+                        <div class="cover-text-overlay animate-cover-text" style="margin:0;" data-type-text="2. Købeloven" data-type-speed="50"></div>
+                    </div>
+                </div>
+
+                <div class="info-box reveal-on-scroll">
+                    <p>Som serviceøkonom sælger du mest oplevelser. Købeloven gælder varer. Den gælder ikke en hotelnat, et bord eller en koncert. Den gælder, når gæsten køber en ting. Eller når hotellet selv køber linned af en leverandør.</p>
+                    <p>Reglerne om forbrugerkøb blev strammet ved lov nr. 1173 af 8. juni 2021. De gælder køb fra 1. januar 2022. Læs den samlede lov på <a href="https://www.retsinformation.dk/eli/lta/2021/1853" target="_blank">retsinformation.dk</a>, og tjek om der ligger en nyere bekendtgørelse. En kort version til hverdagen ligger hos <a href="https://forbrug.dk/regler/opslagsvaerk-forbrugerleksikon/koebeloven" target="_blank">forbrug.dk</a>.</p>
+                </div>
+
+                <h2>Hvornår er det et køb</h2>
+                <p>Et køb er en aftale om en vare mod betaling. Varen er en fysisk ting. I branchen møder du købet her:</p>
+                <ul>
+                    <li>En flaske vin i restauranten eller minibaren.</li>
+                    <li>En souvenir, en badekåbe eller en kop i hotellets shop.</li>
+                    <li>Udstyr, hotellet køber af en leverandør. Linned, glas, en espressomaskine.</li>
+                </ul>
+                <div class="example-box">
+                    <p><b>Eksempel: vinen smager af prop</b></p>
+                    <p>Gæsten køber en flaske til 420 kr. Vinen er proppet. Det er et køb. I bytter flasken eller giver pengene tilbage. Det er ikke en klage over "oplevelsen" i kapitel 1. Det er en mangel ved varen.</p>
+                </div>
+
+                <h2>Hvornår er det en ydelse</h2>
+                <p>En ydelse er arbejde eller en oplevelse. Der findes ikke en købelov for ydelser. I spørger i stedet: Hvad aftalte vi? Hvad lovede reklamen? Hvad kunne gæsten rimeligt forvente?</p>
+                <div class="example-box">
+                    <p><b>To regninger på samme aften</b></p>
+                    <p>Værelset er en ydelse. Se kapitel 1. Chokoladen i shoppen er et køb. Morgenmaden, der er lagt ind i værelsesprisen, følger opholdet. En kage, gæsten køber med hjem i en æske, er en vare.</p>
+                    <p>Syer hotellet en ny uniform, er det et køb af tøjet. Retter en skrædder kun i en uniform, gæsten allerede ejer, er det en ydelse.</p>
+                    <p><small>Kilde: <a href="https://forbrug.dk/regler/virksomheder-vejledning-om-koebeloven/hvad-er-en-tjenesteydelse" target="_blank">forbrug.dk om tjenesteydelser</a>.</small></p>
+                </div>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>På regningen</th>
+                                <th>Vare eller ydelse</th>
+                                <th>Købeloven</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>En nat på hotellet</td>
+                                <td>Ydelse</td>
+                                <td>Nej. Se kapitel 1</td>
+                            </tr>
+                            <tr>
+                                <td>Morgenmad, der ligger i værelsesprisen</td>
+                                <td>Del af ydelsen</td>
+                                <td>Nej</td>
+                            </tr>
+                            <tr>
+                                <td>Flaske vin eller kage i en æske med hjem</td>
+                                <td>Vare</td>
+                                <td>Ja</td>
+                            </tr>
+                            <tr>
+                                <td>Hotellet får syet nye uniformer</td>
+                                <td>Køb af tøj</td>
+                                <td>Ja</td>
+                            </tr>
+                            <tr>
+                                <td>En skrædder retter kun i en uniform, hotellet allerede ejer</td>
+                                <td>Ydelse</td>
+                                <td>Nej</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Forbrugerkøb og handelskøb</h2>
+                <p><b>Forbrugerkøb</b> er, når en privat gæst køber en vare af jer til sig selv. Reglerne kan ikke aftales væk til gæstens ulempe. To års reklamationsret. I skal reparere eller omlevere, før I taler om afslag.</p>
+                <p><b>Handelskøb</b> er, når to virksomheder handler. Hotellet køber 200 dynebetræk af en grossist. Her må I aftale andre frister. Grossisten kan kræve, at I klager med det samme, når varen kommer.</p>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Forbrugerkøb</th>
+                                <th>Handelskøb</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Hvem køber</b></td>
+                                <td>En privat gæst, til sig selv</td>
+                                <td>Hotellet køber af en leverandør</td>
+                            </tr>
+                            <tr>
+                                <td><b>Kan reglerne aftales væk</b></td>
+                                <td>Nej, ikke til gæstens ulempe</td>
+                                <td>Ja, I kan aftale andre frister</td>
+                            </tr>
+                            <tr>
+                                <td><b>Klagefrist</b></td>
+                                <td>To år fra den dag, gæsten fik varen</td>
+                                <td>Ofte med det samme, når varen kommer</td>
+                            </tr>
+                            <tr>
+                                <td><b>Eksempel</b></td>
+                                <td>Badekåbe i shoppen</td>
+                                <td>Palle med dynebetræk til housekeeping</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="example-box">
+                    <p><b>Eksempel: linned med huller</b></p>
+                    <p>Pallen ankommer mandag. Onsdag opdager housekeeping, at hvert tiende betræk er hullet. I handelskøb skal I reklamere hurtigt. Vent ikke til månedsopgørelsen. Skriv til leverandøren samme dag, med fotos og antal.</p>
+                </div>
+
+                <h2>Hvad er en mangel</h2>
+                <p>En mangel er ikke kun noget, der er i stykker. Varen har også en mangel, hvis den ikke er det, I lovede. Forkert farve. Forkert størrelse. En "vandtæt" taske, der ikke tåler regn.</p>
+                <p>I forbrugerkøb fra 2022 skal varen både passe til aftalen og til det, en gæst normalt kan forvente af den slags vare. Viser fejlen sig inden for det første år, er udgangspunktet, at fejlen var der ved købet. Så er det jer, der skal bevise det modsatte.</p>
+                <div class="example-box">
+                    <p><b>Eksempel: badekåben i shoppen</b></p>
+                    <p>Skiltet siger "økologisk bomuld". Vaskemærket siger polyester. Gæsten kan kræve en ny kåbe eller pengene tilbage. I lovede noget andet, end I leverede.</p>
+                </div>
+
+                <h2>Hvad kan kunden kræve</h2>
+                <p>Rækkefølgen er vigtig. I forbrugerkøb starter I øverst i tabellen.</p>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Trin</th>
+                                <th>Hvad gæsten kan kræve</th>
+                                <th>Hvornår</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Reparation eller en ny vare. Gratis og uden væsentlig ulempe</td>
+                                <td>Inden for rimelig tid. Typisk ét til to forsøg</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Afslag i prisen</td>
+                                <td>Hvis reparationen ikke kan nås, eller fejlen er mindre</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Ophævelse. Pengene tilbage, varen retur</td>
+                                <td>Når det allerede står klart, at I ikke når det i tide. Se sag 23/13446</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>I har typisk ét til to forsøg. Flere forsøg kræver en god grund, og det hele skal stadig ske inden for rimelig tid. Gæsten skal hjælpe til. Han skal aflevere varen, så I kan se på den.</p>
+                <div class="example-box">
+                    <p><b>Kendelse: Forbrugerklagenævnet, sag 23/13446</b></p>
+                    <p>En forbruger købte en robotplæneklipper til 5.499 kr. Den gik i stykker. Omkring to måneder efter reklamationen manglede reparatøren stadig reservedele. Forbrugeren skrev den 20. september 2023, at han ville hæve købet, hvis maskinen ikke var tilbage senest den 27. september. Den kom ikke. Han krævede ophævelse den 27. september og igen den 3. oktober. Selskabet sagde nej den 5. oktober og ville stadig reparere. Nævnet sagde, at det allerede ved ophævelsen stod klart, at reparationen ikke ville ske inden for rimelig tid. Forbrugeren kunne derfor hæve købet.</p>
+                    <p>Sagen handler om en plæneklipper, ikke om et hotel. Trappen er den samme, når jeres shop sælger en højttaler, en kedel eller en kuffert til en gæst. To måneder uden en løsning er for lang tid.</p>
+                    <p><b>Sådan gør I:</b> Giv gæsten en dato. Kan I ikke skaffe delen, så sig det og tilbyd en ny vare eller pengene tilbage. Lad ikke sagen ligge.</p>
+                    <p><small>Kilder: <a href="https://www.lovguiden.dk/dokument/forbrugerklagenaevnet/23-13446-forbruger-berettiget-til-at-oph%C3%A6ve-k%C3%B8b-af-robotpl%C3%A6neklipper-grundet-manglende-afhj%C3%A6lpning-inden-for-rimelig-tid" target="_blank">Forbrugerklagenævnet, sag 23/13446</a> og <a href="https://forbrug.dk/regler/opslagsvaerk-forbrugerleksikon/afhjaelpning" target="_blank">forbrug.dk om afhjælpning</a>.</small></p>
+                </div>
+
+                <h2>Hvor længe kan kunden klage</h2>
+                <p>I forbrugerkøb har gæsten to år. Fristen løber fra den dag, han fik varen. Han skal klage inden for rimelig tid, efter han opdagede fejlen. To måneder regnes som udgangspunkt for hurtigt nok.</p>
+                <p>En ydelse har ikke den samme frist på to år. Der gælder de almindelige forældelsesregler. Sig derfor højt i teamet, om klagen handler om en ting eller om opholdet.</p>
+                <div class="example-box">
+                    <p><b>Eksempel: højttaleren fra lobby-shoppen</b></p>
+                    <p>Gæsten købte den i juni. I november virker den ikke. Han skriver i december. I er stadig inden for de to år. I skal undersøge den. I kan ikke bare sige "kvitteringen er for gammel", hvis der er gået under to år.</p>
+                    <p>Købte han den som firma, og fakturaen står på hans selskab, er det måske ikke et forbrugerkøb. Spørg, hvem der er køber, før I lover to år.</p>
+                </div>
+
+                <h2>Kort huskeliste</h2>
+                <div class="example-box">
+                    <p>1. Er det en ting eller en oplevelse? 2. Er køberen en privat gæst eller en virksomhed? 3. Lovede vi noget bestemt om varen? 4. Kan vi reparere eller bytte inden for kort tid? 5. Er der gået under to år, hvis det er et forbrugerkøb?</p>
+                    <p>Kan I ikke svare på punkt 1, så start i <a href="kapitel1.html">kapitel 1</a>. En dårlig hotelnat er ikke en købelovssag.</p>
+                </div>
+                <p>Kapitlet er et første udkast til undervisning. Det erstatter ikke den aktuelle lovtekst og er ikke råd i en konkret sag.</p>
+            </article>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/info.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script src="js/glossary.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/theme-toggle.js"></script>
+</body>
+
+</html>

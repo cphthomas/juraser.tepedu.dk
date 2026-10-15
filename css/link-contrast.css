@@ -1,0 +1,165 @@
+/* ============================================
+   LINK CONTRAST — light + dark
+   Chip-links: hvid tekst på mørk marine (WCAG)
+   ============================================ */
+:root {
+    --link-chip-bg: #0f6d5c;
+    --link-chip-text: #ffffff;
+    --link-chip-hover-bg: #0a5246;
+    --link-chip-focus: #0f6d5c;
+    --link-inline: #0f6d5c;
+    --link-inline-hover: #0a4436;
+}
+
+[data-theme="dark"] {
+    --link-chip-bg: #1a7a66;
+    --link-chip-text: #ffffff;
+    --link-chip-hover-bg: #24997f;
+    --link-chip-focus: #3aa88f;
+    --link-inline: #5ec4a8;
+    --link-inline-hover: #8fd9c4;
+}
+
+/* External / pill links in content */
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+.content table a[href^="http://"]:not(.effectLinksTable),
+.content table a[href^="https://"]:not(.effectLinksTable),
+article table a[href^="http://"]:not(.effectLinksTable),
+article table a[href^="https://"]:not(.effectLinksTable),
+.content .info-box a[href^="http://"],
+.content .info-box a[href^="https://"],
+.content .example-box a[href^="http://"],
+.content .example-box a[href^="https://"],
+article .info-box a[href^="http://"],
+article .info-box a[href^="https://"],
+article .example-box a[href^="http://"],
+article .example-box a[href^="https://"],
+.content .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]),
+.content .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]),
+article .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]),
+article .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]),
+.content a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]),
+article a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]) {
+    color: var(--link-chip-text) !important;
+    background-color: var(--link-chip-bg) !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+}
+
+.content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover,
+.content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover,
+article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover,
+article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):hover,
+.content table a[href^="http://"]:not(.effectLinksTable):hover,
+.content table a[href^="https://"]:not(.effectLinksTable):hover,
+article table a[href^="http://"]:not(.effectLinksTable):hover,
+article table a[href^="https://"]:not(.effectLinksTable):hover,
+.content .info-box a[href^="http://"]:hover,
+.content .info-box a[href^="https://"]:hover,
+.content .example-box a[href^="http://"]:hover,
+.content .example-box a[href^="https://"]:hover,
+article .info-box a[href^="http://"]:hover,
+article .info-box a[href^="https://"]:hover,
+article .example-box a[href^="http://"]:hover,
+article .example-box a[href^="https://"]:hover,
+.content .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover,
+.content .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover,
+article .info-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover,
+article .example-box a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover,
+.content a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover,
+article a:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):not(.scroll-indicator):not(.book-card a):not([href^="http"]):not([href^="https"]):not([href^="#"]):not([href^="mailto:"]):hover {
+    color: var(--link-chip-text) !important;
+    background-color: var(--link-chip-hover-bg) !important;
+}
+
+/* Keep external-link icon white on chip */
+.content a[href^="http"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link)::after,
+article a[href^="http"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link)::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E") !important;
+    opacity: 1 !important;
+}
+
+/* Focus ring */
+.content a[href^="http"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):focus,
+article a[href^="http"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link):focus {
+    outline: 2px solid var(--link-chip-focus) !important;
+    outline-offset: 2px;
+}
+
+/* Dark mode: stop theme-dark from painting light-blue text on chips */
+[data-theme="dark"] .content a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+[data-theme="dark"] .content a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+[data-theme="dark"] article a[href^="http://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+[data-theme="dark"] article a[href^="https://"]:not(.navbar-brand):not(.nav-link):not(.dropdown-item):not(.effectLinks):not(.effectLinksTable):not(.styled-cta-link),
+[data-theme="dark"] .content table a[href^="http"],
+[data-theme="dark"] article table a[href^="http"],
+[data-theme="dark"] .content .info-box a[href^="http"],
+[data-theme="dark"] .content .example-box a[href^="http"],
+[data-theme="dark"] article .info-box a[href^="http"],
+[data-theme="dark"] article .example-box a[href^="http"] {
+    color: #ffffff !important;
+    background-color: var(--link-chip-bg) !important;
+}
+
+[data-theme="dark"] .content a[href^="http"]:hover,
+[data-theme="dark"] article a[href^="http"]:hover {
+    color: #ffffff !important;
+    background-color: var(--link-chip-hover-bg) !important;
+}
+
+/* effectLinks: dark text on light chip in light mode; inverted clearly in dark */
+.effectLinks {
+    background: #d5dde6 !important;
+    color: #0a4436 !important;
+    font-weight: 600 !important;
+}
+
+.effectLinks:hover,
+.effectLinks::after {
+    background: #0f6d5c !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .effectLinks {
+    background: #1f2a2e !important;
+    color: #e8fff8 !important;
+    border: 1px solid #3aa88f !important;
+}
+
+[data-theme="dark"] .effectLinks:hover,
+[data-theme="dark"] .effectLinks::after {
+    background: #24997f !important;
+    color: #ffffff !important;
+}
+
+/* Legal terms / glossary chips */
+.legal-term {
+    color: #0a4436 !important;
+    border-bottom-color: #0f6d5c !important;
+}
+
+[data-theme="dark"] .legal-term {
+    color: #8fd9c4 !important;
+    border-bottom-color: #5ec4a8 !important;
+}
+
+[data-theme="dark"] .legal-term:hover {
+    color: #ffffff !important;
+    background-color: rgba(58, 168, 143, 0.2) !important;
+}
+
+/* Table body text contrast in dark mode */
+[data-theme="dark"] table.table td,
+[data-theme="dark"] table.table th,
+[data-theme="dark"] .content p,
+[data-theme="dark"] article p {
+    color: #f0f0f0 !important;
+}
+
+[data-theme="dark"] table.table thead th {
+    background-color: #0f6d5c !important;
+    color: #ffffff !important;
+}

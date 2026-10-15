@@ -1,0 +1,417 @@
+/* Glossary Tooltip Styling */
+.legal-term {
+    border-bottom: 2px dotted var(--accent-marine, #0f6d5c);
+    cursor: help;
+    position: relative;
+    display: inline;
+    padding-bottom: 1px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-weight: 600;
+    color: var(--accent-marine, #0f6d5c);
+    scroll-margin-top: 100px;
+    /* Offset for fixed header */
+}
+
+.legal-term:hover {
+    background-color: var(--accent-marine-light, rgba(15, 109, 92, 0.07));
+    border-bottom: 2px solid var(--accent-marine, #0f6d5c);
+}
+
+/* Tooltip container */
+@keyframes slideInTooltip {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.glossary-tooltip {
+    position: absolute;
+    z-index: 10000;
+    max-width: 340px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(15, 109, 92, 0.22);
+    border-top: 4px solid var(--accent-marine, #0f6d5c);
+    border-radius: 0 !important;
+    padding: 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(15, 109, 92, 0.06);
+    font-family: var(--font-ui, 'IBM Plex Mono', monospace);
+    font-size: 14px;
+    line-height: 1.6;
+    color: #2c3e50;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.5s;
+    pointer-events: auto;
+}
+
+.glossary-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.glossary-tooltip h4 {
+    margin: 0;
+    font-family: var(--font-ui, 'IBM Plex Mono', monospace);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-marine, #0f6d5c) !important;
+    display: flex;
+    align-items: center;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.glossary-tooltip .header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.glossary-tooltip .header i {
+    font-size: 14px;
+    color: var(--accent-marine, #0f6d5c);
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: #ffffff;
+    border: 1.5px solid rgba(15, 109, 92, 0.4);
+    border-radius: 50%;
+}
+
+.glossary-tooltip h4::before {
+    display: none;
+}
+
+.glossary-tooltip:hover .header i {
+    animation: iconPulse 1.5s infinite ease-in-out;
+    background: #ffffff;
+}
+
+.glossary-tooltip .definition {
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-family: var(--font-ui, 'IBM Plex Mono', monospace);
+    color: #2c3e50;
+}
+
+.glossary-tooltip .example {
+    font-size: 13px;
+    background: rgba(15, 109, 92, 0.06);
+    padding: 12px 16px;
+    border-radius: 0 !important;
+    border-left: 3px solid var(--accent-marine, #0f6d5c);
+    font-style: italic;
+    font-family: var(--font-ui, 'IBM Plex Mono', monospace);
+    color: #555;
+}
+
+.glossary-tooltip .footer {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(15, 109, 92, 0.2);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-ui, 'IBM Plex Mono', monospace);
+    color: var(--accent-marine, #0f6d5c);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Dark mode: same light translucent card + white circle icon */
+[data-theme="dark"] .legal-term {
+    color: var(--accent-blue, #3aa88f);
+    border-bottom: 2px dotted var(--accent-blue, #3aa88f);
+}
+
+[data-theme="dark"] .legal-term:hover {
+    background-color: var(--accent-blue-light, rgba(58, 168, 143, 0.1));
+    border-bottom-color: var(--accent-blue, #3aa88f);
+}
+
+[data-theme="dark"] .glossary-tooltip {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border: 1px solid rgba(15, 109, 92, 0.28) !important;
+    border-top: 4px solid var(--accent-marine, #0f6d5c) !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(15, 109, 92, 0.1) !important;
+    color: #2c3e50 !important;
+}
+
+[data-theme="dark"] .glossary-tooltip h4 {
+    color: var(--accent-marine, #0f6d5c) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+[data-theme="dark"] .glossary-tooltip .header i {
+    background: #ffffff !important;
+    color: var(--accent-marine, #0f6d5c) !important;
+    border: 1.5px solid rgba(15, 109, 92, 0.4) !important;
+    border-radius: 50% !important;
+}
+
+[data-theme="dark"] .glossary-tooltip:hover .header i {
+    background: #ffffff !important;
+}
+
+[data-theme="dark"] .glossary-tooltip .definition {
+    color: #2c3e50 !important;
+}
+
+[data-theme="dark"] .glossary-tooltip .example {
+    background: rgba(15, 109, 92, 0.06) !important;
+    border-left-color: var(--accent-marine, #0f6d5c) !important;
+    color: #555 !important;
+}
+
+[data-theme="dark"] .glossary-tooltip .footer {
+    border-top: 1px dashed rgba(15, 109, 92, 0.2);
+    color: var(--accent-marine, #0f6d5c) !important;
+}
+
+[data-theme="dark"] .glossary-tooltip .footer i {
+    color: var(--accent-marine, #0f6d5c) !important;
+}
+
+/* Offset for glossary term targets when linked to (fixed navbar) */
+.term-title[id^="term-"],
+h4[id^="term-"] {
+    scroll-margin-top: 120px;
+}
+
+/* Legacy: table rows in glossary */
+tr[id^="term-"] {
+    scroll-margin-top: 220px;
+}
+
+/* -------------------------------------------------------------------------
+   Glossary Page Layout & Styling
+   Enhancing the visual presentation of the glossary list (kapitel6.html)
+   ------------------------------------------------------------------------- */
+
+.glossary-letter-section {
+    padding: 35px 30px;
+    margin-bottom: 40px;
+    border-radius: 0 !important;
+    /* SKILL.md rules */
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Soft, elegant shadow */
+    border-top: 4px solid var(--accent-marine, #0f6d5c);
+    border-left: 1px solid rgba(0, 0, 0, 0.03);
+    border-right: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.glossary-letter-section:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    border-top: 4px solid var(--accent-marine, #0f6d5c);
+    /* Highlight on hover */
+}
+
+.letter-header-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+}
+
+.letter-header-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-marine, #0f6d5c);
+}
+
+.letter-header {
+    font-size: 3rem;
+    font-family: var(--font-display, 'Space Grotesk', sans-serif);
+    color: var(--accent-marine, #0f6d5c);
+    margin: 0;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.glossary-term-item {
+    margin-bottom: 35px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.glossary-term-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.term-title {
+    font-family: var(--font-display, 'Space Grotesk', sans-serif);
+    color: var(--accent-marine, #0f6d5c);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    padding-left: 18px;
+    position: relative;
+}
+
+.term-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
+    width: 4px;
+    background-color: var(--accent-marine, #0f6d5c);
+    border-radius: 0 !important;
+}
+
+.term-definition {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    color: #333333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding-left: 18px;
+    font-size: 1.05rem;
+}
+
+.term-example {
+    background-color: rgba(15, 109, 92, 0.05);
+    padding: 18px 22px;
+    border-left: 3px solid rgba(15, 109, 92, 0.4);
+    border-radius: 0 !important;
+    margin-left: 18px;
+    color: #4a5568;
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+.term-example:hover {
+    background-color: rgba(15, 109, 92, 0.09);
+    border-left: 3px solid var(--accent-marine, #0f6d5c);
+}
+
+.term-example i {
+    font-size: 1.2rem;
+    margin-top: 1px;
+    margin-right: 16px !important;
+    /* Øget mellemrum til teksten */
+    opacity: 0.9;
+    color: var(--accent-marine, #0f6d5c) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+.term-example:hover i {
+    transform: scale(1.2) translateY(-2px);
+    opacity: 1;
+    filter: drop-shadow(0 4px 6px rgba(15, 109, 92, 0.35));
+}
+
+.term-example small {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Dark Mode for Glossary Page */
+[data-theme="dark"] .glossary-letter-section {
+    background-color: var(--bg-dark-card, #1c2632);
+    /* Navy dark */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border-top: 4px solid var(--accent-blue, #3aa88f);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .glossary-letter-section:hover {
+    border-top: 4px solid var(--accent-blue, #3aa88f);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .letter-header-wrapper {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .letter-header {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .glossary-term-item {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .term-title {
+    color: var(--accent-blue, #8dbbed);
+}
+
+[data-theme="dark"] .term-title::before {
+    background-color: var(--accent-blue, #3aa88f);
+}
+
+[data-theme="dark"] .term-definition {
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .term-example {
+    background-color: rgba(58, 168, 143, 0.1);
+    border-left-color: var(--accent-blue, #3aa88f);
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .term-example:hover {
+    background-color: rgba(58, 168, 143, 0.18);
+    border-left-color: var(--accent-marine, #0f6d5c);
+}
+
+[data-theme="dark"] .term-example i.text-primary {
+    color: var(--accent-blue, #8dbbed) !important;
+}
+
+[data-theme="dark"] .term-example:hover i.text-primary {
+    color: var(--accent-blue, #8dbbed) !important;
+    filter: drop-shadow(0 4px 6px rgba(141, 187, 237, 0.35));
+}
