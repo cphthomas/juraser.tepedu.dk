@@ -59,12 +59,33 @@ nav.navbar .dropdown-item,
 }
 
 /* Åbn med slide */
+.navbar .dropdown-toggle {
+    position: relative;
+    z-index: 1100;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.2rem;
+    cursor: pointer;
+    padding: 0.45rem 0.65rem !important;
+}
+
+.navbar .dropdown-toggle .bi,
+.navbar .dropdown-toggle::after {
+    pointer-events: none;
+}
+
+.navbar .dropdown-menu:not(.show),
+.navbar .dropdown-menu:not(.show) * {
+    pointer-events: none !important;
+}
+
 .navbar .dropdown-menu {
     display: block !important;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transform: translateY(-12px);
+    top: 100% !important;
     transition: opacity 0.2s ease, transform 0.26s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.2s ease !important;
 }
 

@@ -415,3 +415,23 @@ tr[id^="term-"] {
     color: var(--accent-blue, #8dbbed) !important;
     filter: drop-shadow(0 4px 6px rgba(141, 187, 237, 0.35));
 }
+
+table.glossary-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+table.glossary-table col.col-ord { width: 22%; }
+table.glossary-table col.col-betydning { width: 40%; }
+table.glossary-table col.col-eksempel { width: 38%; }
+
+table.glossary-table th,
+table.glossary-table td {
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    vertical-align: top;
+}
+
+tr[id^="term-"] {
+    scroll-margin-top: 120px;
+}

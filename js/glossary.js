@@ -12,9 +12,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const glossaryData = {};
 
+    function slugify(value) {
+        return value.toLowerCase()
+            .replace(/æ/g, 'ae').replace(/ø/g, 'oe').replace(/å/g, 'aa')
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '');
+    }
+
+    function linkTermsInChapters() {
+        const page = (window.location.pathname || '').toLowerCase();
+        if (!/kapitel[12]\.html$/.test(page) && !page.endsWith('/kapitel1.html') && !page.endsWith('/kapitel2.html')) {
+            if (!page.includes('kapitel1') && !page.includes('kapitel2')) return;
+        }
+        const article = document.querySelector('article');
+        if (!article) return;
+        const entries = Object.entries(glossaryData)
+            .map(([slug, data]) => ({ slug, term: data.term || findTermLabel(slug, data) }))
+            .filter(entry => entry.term && entry.term.length >= 4)
+            .sort((a, b) => b.term.length - a.term.length);
+        if (!entries.length) return;
+
+        const nodes = [];
+        const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+                const parent = node.parentElement;
+                if (!parent) return NodeFilter.FILTER_REJECT;
+                if (parent.closest('.legal-term, a, script, style, h1, .chapter-banner, .book-quiz')) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                if (!parent.closest('p, li, td')) return NodeFilter.FILTER_REJECT;
+                if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        });
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+
+        nodes.forEach(node => {
+            let text = node.nodeValue;
+            const hits = [];
+            entries.forEach(entry => {
+                const re = new RegExp('(?<![A-Za-zÆØÅæøå])' + escapeRegExp(entry.term) + '(?![A-Za-zÆØÅæøå])', 'i');
+                const match = re.exec(text);
+                if (match) hits.push({ index: match.index, length: match[0].length, slug: entry.slug, label: match[0] });
+            });
+            if (!hits.length) return;
+            hits.sort((a, b) => a.index - b.index || b.length - a.length);
+            const chosen = [];
+            hits.forEach(hit => {
+                const overlaps = chosen.some(prev => hit.index < prev.index + prev.length && hit.index + hit.length > prev.index);
+                if (!overlaps) chosen.push(hit);
+            });
+            const fragment = document.createDocumentFragment();
+            let cursor = 0;
+            chosen.forEach(hit => {
+                if (hit.index > cursor) fragment.appendChild(document.createTextNode(text.slice(cursor, hit.index)));
+                const span = document.createElement('span');
+                span.className = 'legal-term';
+                span.setAttribute('data-slug', hit.slug);
+                span.textContent = hit.label;
+                fragment.appendChild(span);
+                cursor = hit.index + hit.length;
+            });
+            if (cursor < text.length) fragment.appendChild(document.createTextNode(text.slice(cursor)));
+            node.parentNode.replaceChild(fragment, node);
+        });
+    }
+
+    function findTermLabel(slug, data) {
+        const row = document.querySelector('[id="term-' + slug + '"]');
+        if (row) return row.textContent.replace(/\s+/g, ' ').trim();
+        return (data && data.term) || '';
+    }
+
+    function escapeRegExp(value) {
+        return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
     // First, fetch all definitions from kapitel23.html if we are not on that page
     // Or just fetch them once to have a central registry
-    const glossaryUrl = window.location.pathname.includes('kapitel23.html') ? 'kapitel23.html' : 'kapitel23.html';
+    const glossaryUrl = 'kapitel3.html';
     
     // Check if we are running on file:// protocol (local development)
     const isLocalFile = window.location.protocol === 'file:';
@@ -31,6 +107,19 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(html => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
+                doc.querySelectorAll('table.glossary-table tbody tr').forEach(row => {
+                    const cells = row.querySelectorAll('td');
+                    if (cells.length < 2) return;
+                    const term = cells[0].textContent.replace(/\s+/g, ' ').trim();
+                    if (!term) return;
+                    const slug = slugify(term);
+                    glossaryData[slug] = {
+                        term: term,
+                        definition: cells[1].textContent.replace(/\s+/g, ' ').trim(),
+                        example: cells[2] ? cells[2].textContent.replace(/\s+/g, ' ').trim() : ''
+                    };
+                });
+
                 const items = doc.querySelectorAll('.glossary-term-item');
                 
                 items.forEach(item => {
@@ -50,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 
-                // Now that we have the data, initialize tooltips
+                linkTermsInChapters();
                 initTooltips();
             })
             .catch(err => {
@@ -90,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="definition">${definition || 'Ingen definition tilgængelig.'}</div>
                     ${example ? `<div class="example"><strong>Eksempel:</strong> ${example}</div>` : ''}
-                    <div class="footer" style="cursor: pointer;" onclick="window.open('kapitel23.html#term-${slug}', '_blank')">
+                    <div class="footer" style="cursor: pointer;" onclick="window.location.href='kapitel3.html#term-${slug}'">
                         <span>LÆS MERE I ORDLISTEN</span>
                         <i class="bi bi-arrow-right"></i>
                     </div>
@@ -127,6 +216,11 @@ document.addEventListener('DOMContentLoaded', () => {
             hideTimeout = setTimeout(() => {
                 tooltip.classList.remove('show');
             }, 300);
+        });
+
+        termElement.addEventListener('click', (event) => {
+            event.preventDefault();
+            termElement.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
         });
     });
     }

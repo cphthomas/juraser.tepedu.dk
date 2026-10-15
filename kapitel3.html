@@ -18,13 +18,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@100;400;500&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=3">
+    <link rel="stylesheet" href="css/styles.css?v=4">
     <link rel="stylesheet" href="css/theme-dark.css">
     <link rel="stylesheet" href="css/link-contrast.css">
-    <link rel="stylesheet" href="css/chapters-shared.css?v=3">
+    <link rel="stylesheet" href="css/chapters-shared.css?v=4">
     <link rel="stylesheet" href="css/glossary.css">
     <link rel="stylesheet" href="css/search.css">
-    <link rel="stylesheet" href="css/square.css?v=3">
+    <link rel="stylesheet" href="css/square.css?v=4">
+    <link rel="stylesheet" href="css/quiz.css?v=4">
     <link rel="icon" type="image/x-icon" href="favicon.svg">
 </head>
 
@@ -104,774 +105,380 @@
                     <p>Du behøver ikke huske alle paragraffer. Du skal kunne ordet, når gæsten står foran dig. Læs eksemplet højt. Spørg dig selv: Hvad gør jeg nu?</p>
                 </div>
 
-                <h2 class="letter-header" id="a">A</h2>
+                                <h2 class="letter-header" id="a">A</h2>
                 <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td><b>Afbestilling</b></td>
-                                <td>Gæsten træder fra aftalen efter dine vilkår eller pakkerejseloven</td>
-                                <td>Gæsten afbestiller hotelnatten tre dage før efter "gratis til 48 timer før"</td>
-                            </tr>
-                            <tr>
-                                <td><b>Afhjælpning</b></td>
-                                <td>Du reparerer varen eller giver en ny. Gratis og inden for rimelig tid i forbrugerkøb</td>
-                                <td>Badekåben har en bristet søm. Du giver en ny samme dag</td>
-                            </tr>
-                            <tr>
-                                <td><b>Afslag</b></td>
-                                <td>Gæsten beholder varen eller opholdet, men betaler mindre</td>
-                                <td>Værelset lugter af maling. Du trækker 300 kr. af natten</td>
-                            </tr>
-                            <tr>
-                                <td><b>Aftale</b></td>
-                                <td>Et tilbud, som den anden har sagt ja til</td>
-                                <td>Gæsten trykker Book og betaler. Aftalen er indgået</td>
-                            </tr>
-                            <tr>
-                                <td><b>Aftaleloven</b></td>
-                                <td>Lov om aftaler. Indeholder også regler om urimelige vilkår</td>
-                                <td>§ 36 og § 38 c bruges, når et vilkår er for hårdt over for forbrugeren</td>
-                            </tr>
+                            <tr id="term-accept"><td><b>Accept</b></td><td>Gæstens ja til dit tilbud.</td><td>Gæsten klikker Book og betaler 1.890 kr. for to nætter. Accepten gør tilbuddet til en aftale. Et like på Instagram er ikke en accept.</td></tr>
+                            <tr id="term-afbestilling"><td><b>Afbestilling</b></td><td>Gæsten træder fra aftalen efter dine vilkår eller pakkerejseloven</td><td>Gæsten afbestiller hotelnatten tre dage før efter &quot;gratis til 48 timer før&quot;. Det er ikke det samme som fortrydelsesrettens 14 dage.</td></tr>
+                            <tr id="term-afhjaelpning"><td><b>Afhjælpning</b></td><td>Du reparerer varen eller giver en ny. Gratis og inden for rimelig tid i forbrugerkøb</td><td>Badekåben har en bristet søm. Du giver en ny samme dag. Gæsten skal ikke vente ugevis, hvis du kan bytte med det samme.</td></tr>
+                            <tr id="term-afslag"><td><b>Afslag</b></td><td>Gæsten beholder varen eller opholdet, men betaler mindre</td><td>Værelset lugter af maling. Du trækker 300 kr. af natten. Prisen sættes ned, men aftalen fortsætter.</td></tr>
+                            <tr id="term-aftale"><td><b>Aftale</b></td><td>Et tilbud, som den anden har sagt ja til</td><td>Gæsten trykker Book og betaler. Aftalen er indgået. Før klikket er det markedsføring. Efter klikket er det en aftale.</td></tr>
+                            <tr id="term-aftaleloven"><td><b>Aftaleloven</b></td><td>Lov om aftaler. Indeholder også regler om urimelige vilkår</td><td>§ 36 og § 38 c bruges, når et vilkår er for hårdt over for forbrugeren</td></tr>
+                            <tr id="term-ankenaevn"><td><b>Ankenævn</b></td><td>Uafhængigt nævn, der afgør forbrugerklager.</td><td>En hotelklage kan gå til Ankenævnet for Hotel, Restaurant og Turisme. En pakkerejse kan gå til Pakkerejse-Ankenævnet. Nævnet er ikke en domstol.</td></tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="example-box">
-                    <p><b>Husk</b></p>
-                    <p>Afbestilling er ikke det samme som fortrydelse. Afbestilling følger dine vilkår. Fortrydelse er lovens 14 dage i nogle netkøb.</p>
-                </div>
-
                 <h2 class="letter-header" id="b">B</h2>
                 <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td><b>Booking</b></td>
-                                <td>Reservation af værelse, bord, billet eller pakke</td>
-                                <td>Gæsten booker to nætter via hjemmesiden</td>
-                            </tr>
-                            <tr>
-                                <td><b>Bindende periode</b></td>
-                                <td>Den tid, gæsten ikke frit kan opsige et abonnement</td>
-                                <td>Spa-kort med seks måneders binding</td>
-                            </tr>
+                            <tr id="term-bekraeftelse"><td><b>Bekræftelse</b></td><td>Skriftligt bevis for bookingen.</td><td>Mailen viser værelse, pris og afbestilling. Til et event viser billetmailen plads og vilkår. Mundtligt tilsagn i receptionen bør følges af en mail.</td></tr>
+                            <tr id="term-bindende-periode"><td><b>Bindende periode</b></td><td>Den tid, gæsten ikke frit kan opsige et abonnement</td><td>Spa-kort med seks måneders binding. Opsigelse skal kunne ske på mail eller i appen, når bindingen er slut.</td></tr>
+                            <tr id="term-booking"><td><b>Booking</b></td><td>Reservation af værelse, bord, billet eller pakke</td><td>Gæsten booker to nætter via hjemmesiden. Bekræftelsen skal vise pris, dato og afbestilling.</td></tr>
                         </tbody>
                     </table>
                 </div>
-
-                <h2 class="letter-header" id="d">D</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Deklaratorisk</b></td>
-                                <td>Aftalen kan gå foran loven</td>
-                                <td>I handelskøb må hotellet og grossisten aftale korte reklamationsfrister</td>
-                            </tr>
-                            <tr>
-                                <td><b>Dokumentation</b></td>
-                                <td>Bevis for det, du lover i reklamen</td>
-                                <td>"Byens bedste brunch" kræver noget, du kan vise frem, jf. MFL § 13</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="e">E</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Erstatning</b></td>
-                                <td>Penge for et tab, du hæfter for</td>
-                                <td>Gæsten vil have taxa betalt, fordi en fejl i huset gjorde ham forsinket</td>
-                            </tr>
-                            <tr>
-                                <td><b>Erhvervsdrivende</b></td>
-                                <td>Den, der handler som led i erhverv</td>
-                                <td>Hotellet, restauranten, eventbureauet</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="f">F</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Forbrugeraftaleloven</b></td>
-                                <td>Regler om aftaler med forbrugere, fx fortrydelse og oplysninger ved netkøb</td>
-                                <td>Oplysninger før online booking. Fortrydelse ved mange netkøb</td>
-                            </tr>
-                            <tr>
-                                <td><b>Forbrugerkøb</b></td>
-                                <td>Privat person køber en vare af en virksomhed til sig selv</td>
-                                <td>Gæsten køber en souvenir i butikken i lobbyen</td>
-                            </tr>
-                            <tr>
-                                <td><b>Forbrugerombudsmanden</b></td>
-                                <td>Myndighed, der fører tilsyn med markedsføring</td>
-                                <td>Går ind i sager om skjult reklame og vildledende priser</td>
-                            </tr>
-                            <tr>
-                                <td><b>Formodningsregel</b></td>
-                                <td>Loven antager noget, indtil det modsatte bevises</td>
-                                <td>Fejl inden for det første år: antag, at manglen var der ved købet</td>
-                            </tr>
-                            <tr>
-                                <td><b>Fortrydelsesret</b></td>
-                                <td>Lovens ret til at træde fra mange netkøb inden for 14 dage</td>
-                                <td>Gælder ofte ikke værelse, bord eller billet på en bestemt dato</td>
-                            </tr>
-                            <tr>
-                                <td><b>Fra-pris</b></td>
-                                <td>Den laveste pris, du viser. Skal kunne købes og være typisk</td>
-                                <td>"Fra 998 kr." må ikke kun gælde søndag nat, hvis opslaget siger weekend</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="example-box">
-                    <p><b>Eksempel: fortrydelse eller afbestilling?</b></p>
-                    <p>Gæsten ringer dagen efter bookingen og siger: "Jeg har 14 dages fortrydelse, fordi jeg bookede på nettet." Tjek først: Er det en pakkerejse? Er det en hotelnat på en bestemt dato? Ofte er svaret afbestilling efter dine vilkår, ikke lovens fortrydelse.</p>
-                </div>
-
-                <h2 class="letter-header" id="g">G</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Garanti</b></td>
-                                <td>Et ekstra løfte, du selv giver. Må ikke være ringere end forbrugerens rettigheder</td>
-                                <td>"To års fabriksgaranti" på en kedel i shoppen</td>
-                            </tr>
-                            <tr>
-                                <td><b>God markedsføringsskik</b></td>
-                                <td>Krav om ordentlig adfærd i markedsføring, MFL § 3</td>
-                                <td>Du må ikke presse børn eller skjule vigtige vilkår</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="h">H</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Handelskøb</b></td>
-                                <td>Køb mellem to virksomheder i deres erhverv</td>
-                                <td>Hotellet køber 200 dynebetræk af en grossist</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="i">I</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Influencer</b></td>
-                                <td>Person, der anbefaler produkter til følgere, ofte mod betaling eller gratis ydelser</td>
-                                <td>En blogger får et gratis weekendophold og lægger billeder op</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="example-box">
-                    <p><b>Sag at huske</b></p>
-                    <p>Østre Landsret 2025: det er ikke nok at tagge. Gæsten skal kunne se ordet reklame med det samme.</p>
-                </div>
-
-                <h2 class="letter-header" id="k">K</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Klage</b></td>
-                                <td>Gæsten siger fra over for en fejl</td>
-                                <td>"Værelset er ikke gjort rent" i receptionen kl. 16</td>
-                            </tr>
-                            <tr>
-                                <td><b>Køb</b></td>
-                                <td>Aftale om en vare mod betaling</td>
-                                <td>Flaske vin, souvenir, T-shirt i boden</td>
-                            </tr>
-                            <tr>
-                                <td><b>Købeloven</b></td>
-                                <td>Lov om køb af varer. Ikke om hotelnætter og koncerter</td>
-                                <td>Se kapitel 2</td>
-                            </tr>
-                            <tr>
-                                <td><b>Kvittering</b></td>
-                                <td>Bevis for købet</td>
-                                <td>Mailkvittering fra shoppen eller kontokortpost</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="l">L</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Levering</b></td>
-                                <td>Det øjeblik, varen går fra dig til køberen</td>
-                                <td>Gæsten betaler i shoppen og får tasken i hånden</td>
-                            </tr>
-                            <tr>
-                                <td><b>Løsøre</b></td>
-                                <td>Fysisk, rørlig ting</td>
-                                <td>Glas, linned, badekåbe, kuffert</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="m">M</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Mangel</b></td>
-                                <td>Varen eller ydelsen er ikke det, du lovede, eller det gæsten med rimelighed kunne forvente</td>
-                                <td>Proppet vin. Beskidt værelse. "Økologisk" badekåbe i polyester</td>
-                            </tr>
-                            <tr>
-                                <td><b>Mangelsbeføjelser</b></td>
-                                <td>Det, køberen kan kræve ved en mangel: afhjælpning, afslag, ophævelse m.m.</td>
-                                <td>Først bytte. Derefter afslag eller ophævelse</td>
-                            </tr>
-                            <tr>
-                                <td><b>Markedsføring</b></td>
-                                <td>Alt, du gør for at sælge: opslag, pris, tilbud og mail</td>
-                                <td>Instagram-opslag om brunch</td>
-                            </tr>
-                            <tr>
-                                <td><b>Markedsføringsloven</b></td>
-                                <td>Lov om reklame, pris, skjult reklame og uønsket mail</td>
-                                <td>Se kapitel 1</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="o">O</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Omlevering</b></td>
-                                <td>Du giver en ny, tilsvarende vare</td>
-                                <td>T-shirt i forkert størrelse byttes til den rigtige</td>
-                            </tr>
-                            <tr>
-                                <td><b>Ophævelse</b></td>
-                                <td>Aftalen går tilbage. Penge retur. Vare retur</td>
-                                <td>Du kan ikke reparere kufferten i tide. Gæsten hæver købet</td>
-                            </tr>
-                            <tr>
-                                <td><b>Opsigelse</b></td>
-                                <td>Stop af abonnement eller medlemskab</td>
-                                <td>Gæsten opsiger spa-kortet på mail</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="p">P</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Pakkerejse</b></td>
-                                <td>Typisk mindst to rejseydelser solgt samlet, med overnatning eller over 24 timer</td>
-                                <td>Tog + to nætter + cykel til én pris</td>
-                            </tr>
-                            <tr>
-                                <td><b>Præceptiv</b></td>
-                                <td>Loven kan ikke aftales væk til skade for forbrugeren</td>
-                                <td>Du kan ikke skrive "ingen reklamation" i et forbrugerkøb</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="example-box">
-                    <p><b>Eksempel: er det en pakkerejse?</b></p>
-                    <p>Et enkelt værelse på hotellets egen side er normalt ikke en pakkerejse. Værelse og fly i én pakke er det typisk. Så gælder pakkerejselovens afbestillingsregler.</p>
-                </div>
-
-                <h2 class="letter-header" id="r">R</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Reklamation</b></td>
-                                <td>Gæsten siger fra over for en mangel</td>
-                                <td>"Hjulet sprang efter tre uger" med foto</td>
-                            </tr>
-                            <tr>
-                                <td><b>Reklamationsfrist</b></td>
-                                <td>Hvor længe gæsten kan klage. To år i forbrugerkøb</td>
-                                <td>Købt i juni. Fejl i november. Stadig inden for fristen</td>
-                            </tr>
-                            <tr>
-                                <td><b>Risikoovergang</b></td>
-                                <td>Hvornår risikoen for varen går fra dig til køberen</td>
-                                <td>Efter levering i shoppen bærer gæsten normalt risikoen</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="s">S</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Samtykke</b></td>
-                                <td>Et klart ja. Skal til, før du sender reklame på mail eller sms</td>
-                                <td>Tomt felt til "ja tak til nyheder". Gæsten sætter selv kryds</td>
-                            </tr>
-                            <tr>
-                                <td><b>Skjult reklame</b></td>
-                                <td>Reklame uden tydelig mærkning</td>
-                                <td>Tagging uden ordet "Reklame"</td>
-                            </tr>
-                            <tr>
-                                <td><b>Spam</b></td>
-                                <td>Reklame på mail eller sms til nogen, der ikke har bedt om det</td>
-                                <td>Nyhedsbrev til hele bryllupslisten uden ja</td>
-                            </tr>
-                            <tr>
-                                <td><b>Standardvilkår</b></td>
-                                <td>Betingelser, du bruger over for alle gæster</td>
-                                <td>Bookingvilkår på hjemmesiden</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="t">T</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Tilkøb</b></td>
-                                <td>Ekstra ydelse eller vare, gæsten kan vælge til</td>
-                                <td>Parkering, morgenmad, spa. Gæsten skal selv sætte kryds. Feltet må ikke være udfyldt på forhånd</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="u">U</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Udeladelse</b></td>
-                                <td>Du glemmer eller skjuler noget vigtigt, MFL § 6</td>
-                                <td>Du nævner ikke byggeriet uden for værelset</td>
-                            </tr>
-                            <tr>
-                                <td><b>Urimeligt vilkår</b></td>
-                                <td>Vilkår, der skævvrider aftalen for kraftigt til din fordel</td>
-                                <td>"Depositum tilbagebetales aldrig, uanset årsag"</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="v">V</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Vare</b></td>
-                                <td>Fysisk ting, gæsten kan tage med</td>
-                                <td>Vin, souvenir, T-shirt</td>
-                            </tr>
-                            <tr>
-                                <td><b>Varigt medium</b></td>
-                                <td>Noget, gæsten kan gemme, fx mail eller PDF</td>
-                                <td>Afbestillingsvilkår sendt i bookingbekræftelsen</td>
-                            </tr>
-                            <tr>
-                                <td><b>Vildledning</b></td>
-                                <td>Oplysninger, der får gæsten til at tro noget forkert</td>
-                                <td>"Havudsigt" uden havudsigt. Falsk før-pris</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2 class="letter-header" id="y">Y</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Ord</th>
-                                <th>Betydning</th>
-                                <th>Eksempel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Ydelse</b></td>
-                                <td>Oplevelse eller arbejde. Ikke en vare</td>
-                                <td>Hotelnat, bord, billet, rundvisning</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-
                 <h2 class="letter-header" id="c">C</h2>
                 <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
                         <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
                         <tbody>
-                            <tr><td><b>Culpa</b></td><td>Skyld. Du har handlet uagtsomt eller forsætligt</td><td>Du glemmer at advare om vådt gulv, og gæsten falder</td></tr>
+                            <tr id="term-culpa"><td><b>Culpa</b></td><td>Skyld. Du har handlet uagtsomt eller forsætligt</td><td>Du glemmer at advare om vådt gulv, og gæsten falder. Ansvaret kommer på tale, når du kunne have undgået skaden.</td></tr>
                         </tbody>
                     </table>
                 </div>
-
+                <h2 class="letter-header" id="d">D</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-deklaratorisk"><td><b>Deklaratorisk</b></td><td>Aftalen kan gå foran loven</td><td>I handelskøb må hotellet og grossisten aftale korte reklamationsfrister</td></tr>
+                            <tr id="term-depositum"><td><b>Depositum</b></td><td>Beløb, gæsten betaler forud som sikkerhed.</td><td>Et depositum på en suite eller et mødelokale skal stå i bekræftelsen. Skriv, hvornår beløbet kommer retur, og hvornår det kan beholdes.</td></tr>
+                            <tr id="term-dokumentation"><td><b>Dokumentation</b></td><td>Bevis for det, du lover i reklamen</td><td>&quot;Byens bedste brunch&quot; kræver noget, du kan vise frem, jf. MFL § 13</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="e">E</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-erhvervsdrivende"><td><b>Erhvervsdrivende</b></td><td>Den, der handler som led i erhverv</td><td>Hotellet, restauranten, eventbureauet. Du handler i erhverv, også når gæsten er privat.</td></tr>
+                            <tr id="term-erstatning"><td><b>Erstatning</b></td><td>Penge for et tab, du hæfter for</td><td>Gæsten vil have taxa betalt, fordi en fejl i huset gjorde ham forsinket. Gæsten skal kunne vise et tab. Et almindeligt skuffet ophold er ikke nok.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="f">F</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-forbrugeraftaleloven"><td><b>Forbrugeraftaleloven</b></td><td>Regler om aftaler med forbrugere, fx fortrydelse og oplysninger ved netkøb</td><td>Oplysninger før online booking. Fortrydelse ved mange netkøb</td></tr>
+                            <tr id="term-forbrugerkoeb"><td><b>Forbrugerkøb</b></td><td>Privat person køber en vare af en virksomhed til sig selv</td><td>Gæsten køber en souvenir i butikken i lobbyen. Købelovens forbrugerregler gælder varen, ikke hotelnatten.</td></tr>
+                            <tr id="term-forbrugerombudsmanden"><td><b>Forbrugerombudsmanden</b></td><td>Myndighed, der fører tilsyn med markedsføring</td><td>Går ind i sager om skjult reklame og vildledende priser. En klage kan starte hos Forbrugerombudsmanden, også uden en retssag.</td></tr>
+                            <tr id="term-force-majeure"><td><b>Force majeure</b></td><td>Ekstraordinær hindring uden for din kontrol.</td><td>En strejke eller en naturkatastrofe kan være force majeure. Et almindeligt travlt køkken er det ikke. Brug ikke begrebet som en generel undskyldning i vilkårene.</td></tr>
+                            <tr id="term-formidler"><td><b>Formidler</b></td><td>Den, der formidler aftalen, uden selv at være leverandør.</td><td>En bookingplatform mellem gæst og hotel er formidler. En portal, der sælger andres oplevelser, er det også. Sig tydeligt, hvem gæsten indgår aftalen med.</td></tr>
+                            <tr id="term-formodningsregel"><td><b>Formodningsregel</b></td><td>Loven antager noget, indtil det modsatte bevises</td><td>Fejl inden for det første år: antag, at manglen var der ved købet</td></tr>
+                            <tr id="term-fortrydelsesret"><td><b>Fortrydelsesret</b></td><td>Lovens ret til at træde fra mange netkøb inden for 14 dage</td><td>Gælder ofte ikke værelse, bord eller billet på en bestemt dato. En fast dato på hotel, bord eller billet falder ofte udenfor.</td></tr>
+                            <tr id="term-fra-pris"><td><b>Fra-pris</b></td><td>Den laveste pris, du viser. Skal kunne købes og være typisk</td><td>&quot;Fra 998 kr.&quot; må ikke kun gælde søndag nat, hvis opslaget siger weekend. Gæsten skal kunne købe til den pris, opslaget fremhæver.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="g">G</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-garanti"><td><b>Garanti</b></td><td>Et ekstra løfte, du selv giver. Må ikke være ringere end forbrugerens rettigheder</td><td>&quot;To års fabriksgaranti&quot; på en kedel i shoppen. Garantien lægges oven i reklamationsretten. Den erstatter den ikke.</td></tr>
+                            <tr id="term-gebyr"><td><b>Gebyr</b></td><td>Ekstra betaling ud over grundprisen.</td><td>Et ekstra hotelgebyr, sen udtjekning eller et servicegebyr på billetten skal stå i totalprisen tidligt. Et gebyr, der først dukker op på sidste side, vildleder.</td></tr>
+                            <tr id="term-god-markedsfoeringsskik"><td><b>God markedsføringsskik</b></td><td>Krav om ordentlig adfærd i markedsføring, MFL § 3</td><td>Du må ikke presse børn eller skjule vigtige vilkår. Det gælder både opslag, booking og den måde, du taler til gæsten på.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="h">H</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-handelskoeb"><td><b>Handelskøb</b></td><td>Køb mellem to virksomheder i deres erhverv</td><td>Hotellet køber 200 dynebetræk af en grossist. Reklamér samme dag. Grossisten kan afvise en sen klage.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="i">I</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-influencer"><td><b>Influencer</b></td><td>Person, der anbefaler produkter til følgere, ofte mod betaling eller gratis ydelser</td><td>En blogger får et gratis weekendophold og lægger billeder op. Et tag er ikke en tydelig reklamemarkering. Skriv Reklame.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="k">K</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-klage"><td><b>Klage</b></td><td>Gæsten siger fra over for en fejl</td><td>&quot;Værelset er ikke gjort rent&quot; i receptionen kl. 16. Skriv klagen ned med tidspunkt, værelsesnummer og hvad du tilbød.</td></tr>
+                            <tr id="term-kreditnota"><td><b>Kreditnota</b></td><td>Dokument, der trækker en tidligere faktura ned.</td><td>Proppet vin giver kredit på restaurantregningen. Et aflyst kursus kan give kredit på fakturaen. Skriv beløb og den faktura, kreditnotaen hører til.</td></tr>
+                            <tr id="term-kvittering"><td><b>Kvittering</b></td><td>Bevis for købet</td><td>Mailkvittering fra shoppen eller kontokortpost. Bed om den, før du afviser en reklamation.</td></tr>
+                            <tr id="term-koeb"><td><b>Køb</b></td><td>Aftale om en vare mod betaling</td><td>Flaske vin, souvenir, T-shirt i boden. En hotelnat er ikke et køb. Flasken i minibaren er.</td></tr>
+                            <tr id="term-koebeloven"><td><b>Købeloven</b></td><td>Lov om køb af varer. Ikke om hotelnætter og koncerter</td><td>Loven gælder varen i shoppen, minibaren og lageret. En hotelnat står i kapitel 1.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="l">L</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-levering"><td><b>Levering</b></td><td>Det øjeblik, varen går fra dig til køberen</td><td>Gæsten betaler i shoppen og får tasken i hånden. Når gæsten har varen, går risikoen normalt over.</td></tr>
+                            <tr id="term-loesoere"><td><b>Løsøre</b></td><td>Fysisk, rørlig ting</td><td>Glas, linned, badekåbe, kuffert. Løsøre er en vare, du kan flytte. En overnatning er det ikke.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="m">M</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-mangel"><td><b>Mangel</b></td><td>Varen eller ydelsen er ikke det, du lovede, eller det gæsten med rimelighed kunne forvente</td><td>Proppet vin. Beskidt værelse. &quot;Økologisk&quot; badekåbe i polyester. En proppet vin er en mangel ved en vare. Et beskidt værelse er en mangel ved en ydelse.</td></tr>
+                            <tr id="term-mangelsbefoejelser"><td><b>Mangelsbeføjelser</b></td><td>Det, køberen kan kræve ved en mangel: afhjælpning, afslag, ophævelse m.m.</td><td>Først bytte. Derefter afslag eller ophævelse. Du får først chancen for at rette fejlen.</td></tr>
+                            <tr id="term-markedsfoering"><td><b>Markedsføring</b></td><td>Alt, du gør for at sælge: opslag, pris, tilbud og mail</td><td>Instagram-opslag om brunch. Opslaget skal være sandt, også når det kun ligger på Instagram.</td></tr>
+                            <tr id="term-markedsfoeringsloven"><td><b>Markedsføringsloven</b></td><td>Lov om reklame, pris, skjult reklame og uønsket mail</td><td>Loven styrer opslaget, prisen og den skjulte reklame. Et usandt billede af værelset hører hjemme her.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
                 <h2 class="letter-header" id="n">N</h2>
                 <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
                         <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
                         <tbody>
-                            <tr><td><b>Nyhedsbrev</b></td><td>Løbende mails med tilbud eller nyheder</td><td>Kræver samtykke, eller undtagelsen i MFL § 10, stk. 2</td></tr>
+                            <tr id="term-nyhedsbrev"><td><b>Nyhedsbrev</b></td><td>Løbende mails med tilbud eller nyheder</td><td>Kræver samtykke, eller undtagelsen i MFL § 10, stk. 2. Uden samtykke må du kun skrive om lignende varer, gæsten selv har købt.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="o">O</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-omlevering"><td><b>Omlevering</b></td><td>Du giver en ny, tilsvarende vare</td><td>T-shirt i forkert størrelse byttes til den rigtige. Gæsten skal have den vare, du aftalte, uden at vente urimeligt længe.</td></tr>
+                            <tr id="term-ophaevelse"><td><b>Ophævelse</b></td><td>Aftalen går tilbage. Penge retur. Vare retur</td><td>Du kan ikke reparere kufferten i tide. Gæsten hæver købet. Pengene går tilbage, og gæsten afleverer varen.</td></tr>
+                            <tr id="term-opsigelse"><td><b>Opsigelse</b></td><td>Stop af abonnement eller medlemskab</td><td>Gæsten opsiger spa-kortet på mail. Bekræft opsigelsen på samme måde, som gæsten skrev.</td></tr>
+                            <tr id="term-overbooking"><td><b>Overbooking</b></td><td>Flere bookinger end der er plads til.</td><td>Flyt gæsten til et andet hotel og dæk merudgiften, når du har lovet et værelse. Til et show kan du flytte til en anden forestilling eller give pengene tilbage.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="p">P</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-pakkerejse"><td><b>Pakkerejse</b></td><td>Typisk mindst to rejseydelser solgt samlet, med overnatning eller over 24 timer</td><td>Tog + to nætter + cykel til én pris. Tog, hotel og cykel til én samlet pris kan være en pakkerejse.</td></tr>
+                            <tr id="term-praeceptiv"><td><b>Præceptiv</b></td><td>Loven kan ikke aftales væk til skade for forbrugeren</td><td>Du kan ikke skrive &quot;ingen reklamation&quot; i et forbrugerkøb. Et skilt om ingen reklamation gælder ikke i et forbrugerkøb.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="r">R</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-rabatkode"><td><b>Rabatkode</b></td><td>Kode, der sænker prisen.</td><td>Koden må ikke skabe en falsk før-pris. Hvis alle betaler 800 kr. med koden, må du ikke skilte med 1.400 kr. som den normale pris.</td></tr>
+                            <tr id="term-refundering"><td><b>Refundering</b></td><td>Penge tilbage.</td><td>Pengene kan komme retur efter en aftalt afbestilling, en aflysning eller en mangel, du ikke kan rette. Skriv beløb og tidspunkt i mailen.</td></tr>
+                            <tr id="term-reklamation"><td><b>Reklamation</b></td><td>Gæsten siger fra over for en mangel</td><td>&quot;Hjulet sprang efter tre uger&quot; med foto. Foto og dato gør klagen lettere at behandle.</td></tr>
+                            <tr id="term-reklamationsfrist"><td><b>Reklamationsfrist</b></td><td>Hvor længe gæsten kan klage. To år i forbrugerkøb</td><td>Købt i juni. Fejl i november. Stadig inden for fristen. I forbrugerkøb er fristen to år fra leveringen.</td></tr>
+                            <tr id="term-risikoovergang"><td><b>Risikoovergang</b></td><td>Hvornår risikoen for varen går fra dig til køberen</td><td>Efter levering i shoppen bærer gæsten normalt risikoen. Går tasken i stykker bagefter ved normal brug, kan det stadig være en mangel.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="s">S</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-samtykke"><td><b>Samtykke</b></td><td>Et klart ja. Skal til, før du sender reklame på mail eller sms</td><td>Tomt felt til &quot;ja tak til nyheder&quot;. Gæsten sætter selv kryds. Et forudkrydset felt er ikke et ja.</td></tr>
+                            <tr id="term-skjult-reklame"><td><b>Skjult reklame</b></td><td>Reklame uden tydelig mærkning</td><td>Et tag uden ordet Reklame er ikke nok. Skriv Reklame, så læseren ser det med det samme.</td></tr>
+                            <tr id="term-spam"><td><b>Spam</b></td><td>Reklame på mail eller sms til nogen, der ikke har bedt om det</td><td>Nyhedsbrev til hele bryllupslisten uden ja. Praktisk mail om den konkrete booking er ikke reklame.</td></tr>
+                            <tr id="term-standardvilkaar"><td><b>Standardvilkår</b></td><td>Betingelser, du bruger over for alle gæster</td><td>Bookingvilkår på hjemmesiden. Gæsten skal kunne læse vilkårene, før han siger ja.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="t">T</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-tilbud"><td><b>Tilbud</b></td><td>Det, du foreslår, at gæsten siger ja til.</td><td>Prisen på værelset eller billetpakken er tilbuddet. Gæstens ja er accepten. Et opslag er ofte kun markedsføring, indtil gæsten kan sige ja til en bestemt pris.</td></tr>
+                            <tr id="term-tilkoeb"><td><b>Tilkøb</b></td><td>Ekstra ydelse eller vare, gæsten kan vælge til</td><td>Parkering, morgenmad, spa. Gæsten skal selv sætte kryds. Feltet må ikke være udfyldt på forhånd</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="u">U</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-udeblivelse"><td><b>Udeblivelse</b></td><td>Gæsten møder ikke op og har ikke afbestilt. Branchen siger også no-show.</td><td>Værelset står tomt, eller stolen til koncerten er tom. Vilkårene afgør, om gæsten stadig skal betale. Skriv reglen i bekræftelsen.</td></tr>
+                            <tr id="term-udeladelse"><td><b>Udeladelse</b></td><td>Du glemmer eller skjuler noget vigtigt, MFL § 6</td><td>Du nævner ikke byggeriet uden for værelset. Du skal sige det, gæsten har brug for at vide, før han booker.</td></tr>
+                            <tr id="term-udenretlig-loesning"><td><b>Udenretlig løsning</b></td><td>Løsning uden domstol.</td><td>Du tilbyder et andet værelse og et afslag, eller du ombooker til næste show. De fleste gæstesager stopper her, hvis du handler hurtigt og skriver det ned.</td></tr>
+                            <tr id="term-urimeligt-vilkaar"><td><b>Urimeligt vilkår</b></td><td>Vilkår, der skævvrider aftalen for kraftigt til din fordel</td><td>&quot;Depositum tilbagebetales aldrig, uanset årsag&quot;. Et vilkår, der altid lader hotellet beholde pengene, holder sjældent.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="v">V</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-vare"><td><b>Vare</b></td><td>Fysisk ting, gæsten kan tage med</td><td>Vin, souvenir, T-shirt. Varen kan du lægge i en pose. Ydelsen kan du ikke.</td></tr>
+                            <tr id="term-varigt-medium"><td><b>Varigt medium</b></td><td>Noget, gæsten kan gemme, fx mail eller PDF</td><td>Afbestillingsvilkår sendt i bookingbekræftelsen. Et mundtligt vilkår i telefonen er ikke nok, når loven kræver mail eller pdf.</td></tr>
+                            <tr id="term-vildledning"><td><b>Vildledning</b></td><td>Oplysninger, der får gæsten til at tro noget forkert</td><td>&quot;Havudsigt&quot; uden havudsigt. Falsk før-pris. Billedet og prisen skal ligne det, gæsten kan købe.</td></tr>
+                            <tr id="term-vaesentlig-mangel"><td><b>Væsentlig mangel</b></td><td>Fejl, der betyder noget for aftalen.</td><td>Intet vand på badeværelset er væsentligt. En aflyst hovednavn på plakaten er det også. En lille ridse, du har oplyst, er det ikke.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="letter-header" id="y">Y</h2>
+                <div class="table-responsive mb-4">
+                    <table class="table table-striped table-bordered glossary-table">
+                        <colgroup><col class="col-ord"><col class="col-betydning"><col class="col-eksempel"></colgroup>
+                        <thead><tr><th>Ord</th><th>Betydning</th><th>Eksempel</th></tr></thead>
+                        <tbody>
+                            <tr id="term-ydelse"><td><b>Ydelse</b></td><td>Oplevelse eller arbejde. Ikke en vare</td><td>Hotelnat, bord, billet, rundvisning. Købeloven gælder ikke ydelsen. Aftalen og markedsføringen gør.</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h2>Sammenligningstabeller</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead><tr><th></th><th>Fortrydelse</th><th>Afbestilling</th><th>Ophævelse</th></tr></thead>
-                        <tbody>
-                            <tr><td><b>Hvad er det</b></td><td>Lovens 14 dage i nogle netkøb</td><td>Dine vilkår eller pakkerejseloven</td><td>Aftalen går tilbage pga. mangel</td></tr>
-                            <tr><td><b>Hotelnat på dato</b></td><td>Oftest nej</td><td>Ja, efter vilkår</td><td>Kun hvis ydelsen fejler groft</td></tr>
-                            <tr><td><b>Souvenir i shop</b></td><td>Ved netkøb måske ja</td><td>Sjældent relevant</td><td>Ja, ved mangel</td></tr>
-                            <tr><td><b>Pakkerejse</b></td><td>Nej efter § 18</td><td>Ja efter pakkerejseloven</td><td>Ved mangler på rejsen</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead><tr><th></th><th>Vare</th><th>Ydelse</th></tr></thead>
-                        <tbody>
-                            <tr><td><b>Eksempel</b></td><td>Flaske, T-shirt, kuffert</td><td>Værelse, bord, billet</td></tr>
-                            <tr><td><b>Lov</b></td><td>Købeloven</td><td>Aftalen + kapitel 1</td></tr>
-                            <tr><td><b>Typisk klage</b></td><td>Varen er i stykker eller forkert</td><td>Oplevelsen svarer ikke til løftet</td></tr>
-                            <tr><td><b>Første skridt</b></td><td>Afhjælpning</td><td>Ret fejlen, mens gæsten er der</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead><tr><th></th><th>Forbrugerkøb</th><th>Handelskøb</th></tr></thead>
-                        <tbody>
-                            <tr><td><b>Hvem</b></td><td>Privat gæst</td><td>Hotel køber af leverandør</td></tr>
-                            <tr><td><b>Kan aftales væk</b></td><td>Nej til gæstens ulempe</td><td>Ja ofte</td></tr>
-                            <tr><td><b>Frist</b></td><td>To år</td><td>Ofte med det samme</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2>Flere eksempler fra branchen</h2>
-                <div class="example-box">
-                    <p><b>Hotel.</b> Gæsten booker "stille værelse". Byggeriet starter om morgenen. Det er vildledning eller udeladelse, hvis du vidste det. Tilbyd flytning. Ret opslaget.</p>
-                </div>
-                <div class="example-box">
-                    <p><b>Restaurant.</b> Menuen siger "hummer". Retten er jomfruhummer. Gæsten kan klage over manglen ved ydelsen. Træk forskellen fra, eller lav en ny ret.</p>
-                </div>
-                <div class="example-box">
-                    <p><b>Event.</b> Plakaten lover et bestemt navn. Navnet aflyses. Vilkårene siger "programmet kan ændres". Er ændringen væsentlig, skal du tilbyde ombooking eller penge tilbage.</p>
-                </div>
-                <div class="example-box">
-                    <p><b>Turisme.</b> Du sælger "cykel + to nætter + tog" til én pris. Det ligner en pakkerejse. Brug pakkerejselovens afbestillingsregler.</p>
-                </div>
-                <div class="example-box">
-                    <p><b>Detail i hotelshop.</b> Skiltet siger 199 kr. Kassen trækker 249 kr. Ret det med det samme. Det er både prisskiltning og tillid.</p>
-                </div>
-
-
-                <h2>Udvidet ordbog med branchenoter</h2>
-                <p>Her får du flere ord, du møder i receptionen, i bookingen og i shoppen. Læs dem sammen med tabellerne ovenfor.</p>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead><tr><th>Ord</th><th>Betydning</th><th>Hotel / restaurant</th><th>Event / rejse</th></tr></thead>
-                        <tbody>
-                            <tr><td><b>Ankenævn</b></td><td>Uafhængigt nævn, der afgør forbrugerklager</td><td>Ankenævnet for Hotel, Restaurant og Turisme</td><td>Pakkerejse-Ankenævnet</td></tr>
-                            <tr><td><b>Bekræftelse</b></td><td>Skriftligt bevis for bookingen</td><td>Mail med værelse, pris og afbestilling</td><td>Billetmail med plads og vilkår</td></tr>
-                            <tr><td><b>Depositum</b></td><td>Beløb, gæsten betaler forud som sikkerhed</td><td>Depositum for suite-booking</td><td>Depositum for mødelokale</td></tr>
-                            <tr><td><b>Force majeure</b></td><td>Ekstraordinær hindring uden for din kontrol</td><td>Bruges ofte for bredt i vilkår. Pas på</td><td>Kan være relevant ved strejke eller naturkatastrofe</td></tr>
-                            <tr><td><b>Formidler</b></td><td>Den, der formidler aftalen, uden selv at være leverandør</td><td>Bookingplatform mellem gæst og hotel</td><td>Portal, der sælger andres oplevelser</td></tr>
-                            <tr><td><b>Gebyr</b></td><td>Ekstra betaling ud over grundprisen</td><td>Ekstra hotelgebyr, sen udtjekning</td><td>Servicegebyr på billet</td></tr>
-                            <tr><td><b>Kreditnota</b></td><td>Dokument, der trækker en tidligere faktura ned</td><td>Kredit for proppet vin</td><td>Kredit for et aflyst kursus</td></tr>
-                            <tr><td><b>Udeblivelse</b></td><td>Gæsten udebliver uden at afbestille. Branchen siger også no-show</td><td>Værelse står tomt. Vilkår afgør betaling</td><td>Tom plads til koncert</td></tr>
-                            <tr><td><b>Overbooking</b></td><td>Flere bookinger end der er plads til</td><td>Flyt gæst til andet hotel. Kompenser</td><td>Flyt til anden forestilling eller giv penge tilbage</td></tr>
-                            <tr><td><b>Rabatkode</b></td><td>Kode, der sænker prisen</td><td>Må ikke skabe en falsk før-pris</td><td>Samme regel</td></tr>
-                            <tr><td><b>Refundering</b></td><td>Penge tilbage</td><td>Efter afbestilling eller mangel</td><td>Efter aflysning</td></tr>
-                            <tr><td><b>Tilbud</b></td><td>Det, du foreslår gæsten at sige ja til</td><td>Pris på værelse</td><td>Pris på billetpakke</td></tr>
-                            <tr><td><b>Accept</b></td><td>Gæstens ja til tilbuddet</td><td>Klik på Book</td><td>Køb af billet</td></tr>
-                            <tr><td><b>Væsentlig mangel</b></td><td>Fejl, der betyder noget for aftalen</td><td>Ingen vand på badeværelset</td><td>Hovednavn aflyst på plakaten</td></tr>
-                            <tr><td><b>Udenretlig løsning</b></td><td>Løsning uden domstol</td><td>Du tilbyder nyt værelse og afslag</td><td>Ombooking til næste show</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead><tr><th>Paragraf / regel</th><th>Kort</th><th>Hvor du bruger den</th></tr></thead>
-                        <tbody>
-                            <tr><td>MFL § 5</td><td>Vildledning</td><td>Forkerte billeder og løfter</td></tr>
-                            <tr><td>MFL § 6</td><td>Udeladelser / skjult reklame</td><td>Byggeri ikke nævnt. Manglende reklamemarkering</td></tr>
-                            <tr><td>MFL § 10</td><td>Spam</td><td>Nyhedsbreve og sms</td></tr>
-                            <tr><td>MFL § 11</td><td>Børn og unge</td><td>Reklame via børneprofiler</td></tr>
-                            <tr><td>MFL § 13</td><td>Dokumentation</td><td>"Byens bedste..."</td></tr>
-                            <tr><td>MFL § 14</td><td>Pris</td><td>Prisskilt og bookingflow</td></tr>
-                            <tr><td>Forbrugeraftaleloven § 18</td><td>Undtagelser fra fortrydelse</td><td>Pakkerejse og datofast leisure</td></tr>
-                            <tr><td>Forbrugeraftaleloven § 28</td><td>Opsigelse af løbende aftaler</td><td>Abonnement og medlemskab</td></tr>
-                            <tr><td>Aftaleloven § 36 / § 38 c</td><td>Urimelige vilkår</td><td>Standardvilkår over for forbrugere</td></tr>
-                            <tr><td>Pakkerejseloven § 15</td><td>Afbestilling før afrejse</td><td>Pakkerejser</td></tr>
-                            <tr><td>Købeloven (forbrugerkøb)</td><td>Mangel, afhjælpning, to år</td><td>Butik, minibar, souvenirs</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="example-box">
-                    <p><b>Case: bryllup i huset</b></p>
-                    <p>Du har en bordplan med 80 mailadresser. Du må gerne bruge listen til middagen. Du må ikke sætte alle 80 på hotellets tilbudsliste. Praktisk information om brylluppet hører til aftalen. Reklame for næste weekend kræver samtykke.</p>
-                </div>
-                <div class="example-box">
-                    <p><b>Case: konferencepakke</b></p>
-                    <p>Firmaet køber sal, frokost og AV. Det er ydelser. Køber de samtidig 40 flasker vand til at tage med hjem, er flaskerne varer. Hold regningerne adskilt i hovedet, når der klages.</p>
-                </div>
-                <div class="example-box">
-                    <p><b>Case: udsalg i butikken</b></p>
-                    <p>Du sælger en lampe med synlig ridse og skiltet "udsalg". Ridsen er oplyst. Den er ikke en mangel. At lampen ikke tænder, er en mangel. Fortæl kun om den fejl, gæsten skal kende. Skjul ikke resten.</p>
-                </div>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead><tr><th>Sig</th><th>Undgå</th></tr></thead>
-                        <tbody>
-                            <tr><td>"Det er en afbestilling efter vores vilkår"</td><td>"Du har altid 14 dages fortrydelse"</td></tr>
-                            <tr><td>"Flasken er et køb. Vi bytter den"</td><td>"Det er bare en oplevelse, så der er ikke noget at gøre"</td></tr>
-                            <tr><td>"Jeg afmelder dig nu og sender bekræftelse"</td><td>"Du må selv finde afmeldingslinket et sted"</td></tr>
-                            <tr><td>"Jeg flytter dig til et andet værelse nu"</td><td>"Det må du leve med"</td></tr>
-                            <tr><td>"Reklame skal stå synligt i opslaget"</td><td>"Tagging er fint nok"</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <h2>Hurtig oversigt: hvilken lov?</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Situation</th>
-                                <th>Start her</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Opslag, pris, influencer, spam</td>
-                                <td>Markedsføringsloven, kapitel 1</td>
-                            </tr>
-                            <tr>
-                                <td>Booking, fortrydelse, abonnement, vilkår</td>
-                                <td>Kapitel 1 + forbrugeraftaleloven / aftaleloven</td>
-                            </tr>
-                            <tr>
-                                <td>Flaske, souvenir, T-shirt, linned</td>
-                                <td>Købeloven, kapitel 2</td>
-                            </tr>
-                            <tr>
-                                <td>Fly + hotel som én pakke</td>
-                                <td>Pakkerejseloven, kapitel 1</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-
-                <h2>Ordbog i brug: ti situationer</h2>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead><tr><th>Nr.</th><th>Situation</th><th>Ord du skal bruge</th><th>Handling</th></tr></thead>
-                        <tbody>
-                            <tr><td>1</td><td>Opslag uden ordet reklame</td><td>Skjult reklame</td><td>Ret opslaget. Skriv Reklame</td></tr>
-                            <tr><td>2</td><td>Fra-pris kun om søndagen</td><td>Vildledning / fra-pris</td><td>Ret prisen. Vis typisk pris</td></tr>
-                            <tr><td>3</td><td>Ekstra gebyr på sidste side</td><td>Prisoplysning</td><td>Læg gebyret ind i totalprisen</td></tr>
-                            <tr><td>4</td><td>Gæst vil fortryde hotelnat</td><td>Afbestilling</td><td>Brug vilkårene. Ikke 14 dage automatisk</td></tr>
-                            <tr><td>5</td><td>Spa-kort kræver fremmøde for opsigelse</td><td>Urimeligt vilkår</td><td>Tillad opsigelse på mail eller i appen</td></tr>
-                            <tr><td>6</td><td>Beskidt værelse</td><td>Mangel ved ydelse</td><td>Flyt gæsten. Dokumentér</td></tr>
-                            <tr><td>7</td><td>Proppet vin</td><td>Mangel / købeloven</td><td>Byt eller giv pengene tilbage</td></tr>
-                            <tr><td>8</td><td>Kuffert fejler efter to måneder</td><td>Reklamation / formodning</td><td>Afhjælp. Du skal bevise andet</td></tr>
-                            <tr><td>9</td><td>Hulleret linned fra grossist</td><td>Handelskøb</td><td>Reklamer samme dag</td></tr>
-                            <tr><td>10</td><td>Nyhedsbrev til bordplan</td><td>Samtykke / spam</td><td>Send kun praktisk info om aftalen</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="example-box">
-                    <p><b>Sådan træner du ordlisten</b></p>
-                    <p>Peg på et ord. Sig eksemplet højt. Forklar forskellen til et nabobegreb. Eksempel: afbestilling vs fortrydelse. Vare vs ydelse. Forbrugerkøb vs handelskøb.</p>
-                </div>
-                <div class="table-responsive mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead><tr><th>Forveksling</th><th>Forskellen</th></tr></thead>
-                        <tbody>
-                            <tr><td>Afbestilling / fortrydelse</td><td>Afbestilling følger vilkår eller pakkerejse. Fortrydelse er lovens 14 dage i nogle netkøb</td></tr>
-                            <tr><td>Mangel / fortrydelse</td><td>Mangel er noget galt. Fortrydelse er omfortrydelse uden fejl</td></tr>
-                            <tr><td>Garanti / reklamationsret</td><td>Reklamationsret følger loven. Garanti er et ekstra løfte</td></tr>
-                            <tr><td>Afhjælpning / ophævelse</td><td>Afhjælpning retter. Ophævelse ruller købet tilbage</td></tr>
-                            <tr><td>Samtykke / bookingmail</td><td>Bookingmail hører til aftalen. Reklame kræver samtykke eller § 10, stk. 2</td></tr>
-                            <tr><td>Vildledning / udeladelse</td><td>Vildledning er forkert info. Udeladelse er det, du glemmer at sige</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <h2>Tjek dig selv</h2>
-                <div class="example-box">
-                    <p><b>1.</b> Gæsten vil "fortryde" en hotelnat booket til lørdag. Hvilket ord er det rigtige?</p>
-                    <p><b>Svar:</b> Afbestilling efter dine vilkår. Ikke nødvendigvis fortrydelse.</p>
-                    <p><b>2.</b> Vinen er proppet. Hvilken lov?</p>
-                    <p><b>Svar:</b> Købeloven. Det er en vare.</p>
-                    <p><b>3.</b> Influenceren tagger hotellet. Er det nok?</p>
-                    <p><b>Svar:</b> Nej. Skriv "Reklame" synligt.</p>
-                    <p><b>4.</b> Grossisten leverer hullerede betræk. Hvilket køb?</p>
-                    <p><b>Svar:</b> Handelskøb. Reklamer med det samme.</p>
-                </div>
-
+<div class="book-quiz">
+<h2>Quiz: ordene i receptionen</h2>
+<div hidden>
+<div class="question" data-question="Gæsten vil fortryde en hotelnat booket til lørdag. Hvilket ord passer?" data-answer="0" data-explanation="En fast dato følger afbestillingsvilkårene. Fortrydelsesrettens 14 dage gælder sjældent her.">
+<div class="option" data-option="Afbestilling"></div>
+<div class="option" data-option="Ophævelse"></div>
+<div class="option" data-option="Formodningsregel"></div>
+<div class="option" data-option="Kreditnota"></div>
+</div>
+<div class="question" data-question="Vinen er proppet. Hvilken lov starter du med?" data-answer="1" data-explanation="Flasken er en vare. Købeloven gælder manglen.">
+<div class="option" data-option="Pakkerejseloven"></div>
+<div class="option" data-option="Købeloven"></div>
+<div class="option" data-option="Kun markedsføringsloven"></div>
+<div class="option" data-option="Ingen lov, fordi det er service"></div>
+</div>
+<div class="question" data-question="Influenceren tagger hotellet. Er det nok?" data-answer="2" data-explanation="Et tag er ikke en tydelig reklamemarkering. Skriv Reklame, så det ses med det samme.">
+<div class="option" data-option="Ja, et tag er altid nok"></div>
+<div class="option" data-option="Ja, hvis opslaget har mange likes"></div>
+<div class="option" data-option="Nej. Skriv Reklame synligt"></div>
+<div class="option" data-option="Kun hvis Forbrugerombudsmanden har godkendt opslaget"></div>
+</div>
+<div class="question" data-question="Grossisten leverer hullerede betræk. Hvilket køb er det?" data-answer="0" data-explanation="Hotellet køber til erhverv. Det er handelskøb, så du reklamerer samme dag.">
+<div class="option" data-option="Handelskøb"></div>
+<div class="option" data-option="Forbrugerkøb"></div>
+<div class="option" data-option="Pakkerejse"></div>
+<div class="option" data-option="Force majeure"></div>
+</div>
+</div>
+</div>
+<div class="book-quiz">
+<h2>Quiz: forvekslinger</h2>
+<div hidden>
+<div class="question" data-question="Hvad er forskellen på mangel og fortrydelse?" data-answer="1" data-explanation="En mangel er noget galt ved varen eller ydelsen. Fortrydelse er omfortrydelse uden fejl.">
+<div class="option" data-option="De betyder det samme"></div>
+<div class="option" data-option="Mangel er en fejl. Fortrydelse er uden fejl"></div>
+<div class="option" data-option="Fortrydelse gælder kun handelskøb"></div>
+<div class="option" data-option="Mangel gælder kun Instagram"></div>
+</div>
+<div class="question" data-question="Hvad er forskellen på garanti og reklamationsret?" data-answer="0" data-explanation="Reklamationsretten følger loven. Garantien er et ekstra løfte oveni.">
+<div class="option" data-option="Reklamationsretten følger loven. Garantien er et ekstra løfte"></div>
+<div class="option" data-option="Garantien fjerner reklamationsretten"></div>
+<div class="option" data-option="Kun garantien gælder i shoppen"></div>
+<div class="option" data-option="Reklamationsret gælder kun ydelser"></div>
+</div>
+<div class="question" data-question="Hvad er forskellen på vildledning og udeladelse?" data-answer="2" data-explanation="Vildledning er forkert information. Udeladelse er det, du glemmer at sige.">
+<div class="option" data-option="Udeladelse er altid strafbart. Vildledning er det aldrig"></div>
+<div class="option" data-option="De gælder kun priser"></div>
+<div class="option" data-option="Vildledning er forkert info. Udeladelse er det, du ikke siger"></div>
+<div class="option" data-option="Udeladelse gælder kun pakkerejser"></div>
+</div>
+<div class="question" data-question="Hvad er forskellen på afhjælpning og ophævelse?" data-answer="1" data-explanation="Afhjælpning retter fejlen. Ophævelse ruller købet tilbage.">
+<div class="option" data-option="Ophævelse er altid første skridt"></div>
+<div class="option" data-option="Afhjælpning retter. Ophævelse ruller købet tilbage"></div>
+<div class="option" data-option="Afhjælpning gælder kun ydelser"></div>
+<div class="option" data-option="Ophævelse kræver en domstol"></div>
+</div>
+</div>
+</div>
+<div class="book-quiz">
+<h2>Quiz: hvilken lov</h2>
+<div hidden>
+<div class="question" data-question="Opslag, pris, influencer og spam. Hvor starter du?" data-answer="0" data-explanation="Det er markedsføring. Start i kapitel 1 og markedsføringsloven.">
+<div class="option" data-option="Markedsføringsloven"></div>
+<div class="option" data-option="Købelovens mangelsregler"></div>
+<div class="option" data-option="Kun pakkerejseloven"></div>
+<div class="option" data-option="Kun aftalelovens § 36"></div>
+</div>
+<div class="question" data-question="Flaske, souvenir, T-shirt og linned. Hvor starter du?" data-answer="2" data-explanation="Det er varer. Købeloven i kapitel 2 er det rigtige sted.">
+<div class="option" data-option="Kun markedsføringsloven"></div>
+<div class="option" data-option="Pakkerejseloven"></div>
+<div class="option" data-option="Købeloven"></div>
+<div class="option" data-option="Forbrugeraftalelovens spamregler"></div>
+</div>
+<div class="question" data-question="Fly, hotel og cykel til én samlet pris. Hvad ligner det?" data-answer="1" data-explanation="En samlet rejse med transport og overnatning kan være en pakkerejse.">
+<div class="option" data-option="Almindeligt løsøre"></div>
+<div class="option" data-option="En pakkerejse"></div>
+<div class="option" data-option="Et handelskøb"></div>
+<div class="option" data-option="En kreditnota"></div>
+</div>
+<div class="question" data-question="Spa-kortet kan kun opsiges ved personligt fremmøde. Hvad er problemet?" data-answer="3" data-explanation="Et vilkår, der gør det urimeligt svært at stoppe, holder sjældent. Mail eller app skal være nok.">
+<div class="option" data-option="Det er force majeure"></div>
+<div class="option" data-option="Det er en mangel ved en vare"></div>
+<div class="option" data-option="Det er skjult reklame"></div>
+<div class="option" data-option="Det kan være et urimeligt vilkår"></div>
+</div>
+</div>
+</div>
+<div class="book-quiz">
+<h2>Quiz: pris, samtykke og løsning</h2>
+<div hidden>
+<div class="question" data-question="Fra-prisen gælder kun søndag nat, men opslaget siger weekend. Hvad gør du?" data-answer="0" data-explanation="Ret prisen, så gæsten kan købe det, opslaget lover.">
+<div class="option" data-option="Ret prisen og vis den typiske pris"></div>
+<div class="option" data-option="Behold teksten, hvis én gæst fik prisen"></div>
+<div class="option" data-option="Skriv prisen med småt nederst"></div>
+<div class="option" data-option="Kald det force majeure"></div>
+</div>
+<div class="question" data-question="Må du sætte en hel bordplan på nyhedsbrevet?" data-answer="2" data-explanation="Listen må bruges til middagen. Reklame for næste weekend kræver samtykke.">
+<div class="option" data-option="Ja, fordi de har været i huset"></div>
+<div class="option" data-option="Ja, hvis mailen har et afmeldingslink"></div>
+<div class="option" data-option="Nej. Reklame kræver samtykke"></div>
+<div class="option" data-option="Ja, hvis brylluppet er betalt"></div>
+</div>
+<div class="question" data-question="Gæsten udebliver uden at afbestille. Hvad styrer betalingen?" data-answer="1" data-explanation="Vilkårene i bekræftelsen styrer udeblivelse. Skriv reglen, før gæsten booker.">
+<div class="option" data-option="Altid fuld refundering"></div>
+<div class="option" data-option="Vilkårene om udeblivelse"></div>
+<div class="option" data-option="Købelovens toårsfrist"></div>
+<div class="option" data-option="Automatisk 14 dages fortrydelse"></div>
+</div>
+<div class="question" data-question="Du kan ikke skaffe vand på værelset. Hvad er en udenretlig løsning?" data-answer="0" data-explanation="Flyt gæsten og giv et afslag, før sagen ender i et nævn.">
+<div class="option" data-option="Flyt gæsten og giv et afslag"></div>
+<div class="option" data-option="Bed gæsten vente til næste morgen uden alternativ"></div>
+<div class="option" data-option="Slet bookingen uden besked"></div>
+<div class="option" data-option="Kræv et nyt depositum"></div>
+</div>
+</div>
+</div>
+                <p>Kapitlet er en ordliste til undervisning. Det er ikke en fuld lovgennemgang. Slå den aktuelle lov op, eller spørg en jurist, før du ændrer vilkår eller afviser et større krav.</p>
             </article>
         </div>
     </div>
@@ -886,6 +493,7 @@
     <script src="js/glossary.js"></script>
     <script src="js/search.js"></script>
     <script src="js/theme-toggle.js"></script>
+    <script src="js/quiz.js"></script>
 </body>
 
 </html>

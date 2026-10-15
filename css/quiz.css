@@ -1,0 +1,116 @@
+.book-quiz,
+.book-quiz button,
+.quiz-progress span,
+.quiz-explain {
+    border-radius: 0 !important;
+}
+
+.book-quiz {
+    margin: 2.5rem 0 3rem;
+    border: 1px solid rgba(15, 109, 92, 0.35);
+    background: #fff;
+    padding: 1.5rem 1.25rem 1.25rem;
+}
+
+.book-quiz h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.35rem;
+    margin-top: 0;
+}
+
+.quiz-progress {
+    display: flex;
+    gap: 8px;
+    margin: 0.5rem 0 1.25rem;
+}
+
+.quiz-progress span {
+    width: 14px;
+    height: 14px;
+    background: #d7ddd9;
+}
+
+.quiz-progress span.on {
+    background: #0f6d5c;
+}
+
+.quiz-question {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1.05rem;
+    line-height: 1.45;
+    margin-bottom: 1rem;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.quiz-options button {
+    font-family: "IBM Plex Mono", monospace;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #1a1a1a;
+    padding: 0.75rem 0.9rem;
+    cursor: pointer;
+}
+
+.quiz-options button:hover {
+    background: #f3f7f5;
+}
+
+.quiz-options button.right {
+    background: #d8f3ea;
+    border-color: #0f6d5c;
+}
+
+.quiz-options button.wrong {
+    background: #f8d7da;
+    border-color: #842029;
+}
+
+.quiz-explain {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    background: #f4f7f6;
+    border-left: 4px solid #0f6d5c;
+    font-family: Roboto, sans-serif;
+}
+
+.quiz-nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quiz-nav button {
+    font-family: "Space Grotesk", sans-serif;
+    background: #0f6d5c;
+    color: #fff;
+    border: 0;
+    padding: 0.55rem 0.9rem;
+    cursor: pointer;
+}
+
+.quiz-score {
+    font-family: "IBM Plex Mono", monospace;
+}
+
+[data-theme="dark"] .book-quiz,
+[data-theme="dark"] .quiz-options button,
+[data-theme="dark"] .quiz-explain {
+    background: #161616;
+    color: #f2f2f2;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .quiz-options button.right {
+    background: #14352c;
+}
+
+[data-theme="dark"] .quiz-options button.wrong {
+    background: #3a1c20;
+}
