@@ -5,15 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const headings = article.querySelectorAll('h1, h2, h3, h4');
     if (!headings.length) return;
 
-    // Get current page filename
-    let currentUrl = window.location.href;
-    currentUrl = currentUrl.split('?')[0].split('#')[0];
-    let currentPage = currentUrl.substring(currentUrl.lastIndexOf('/') + 1).toLowerCase();
-    if (!currentPage || currentPage === '') {
-        currentPage = 'index.html';
-    } else if (!currentPage.includes('.')) {
-        currentPage += '.html';
-    }
+    // Filnavn: find kapitelN.html i pathname/href (preview kan mangle pathname)
+    const urlBlob = ((window.location.pathname || '') + ' ' + (window.location.href || '')).toLowerCase();
+    const kapitelFileMatch = urlBlob.match(/(kapitel\d+\.html)/);
+    let currentPage = kapitelFileMatch
+        ? kapitelFileMatch[1]
+        : (urlBlob.match(/([\w.-]+\.html)/) || [])[1] || 'index.html';
 
     const isGlossaryPage = currentPage === 'kapitel3.html';
 
@@ -26,11 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
             heading.innerHTML = headingText;
         });
     } else {
-        // Find chapter number from menuItems array if it exists
-        // index.html is 0, kapitel1.html is 1, etc.
-        const chapterNumber = typeof menuItems !== 'undefined'
-            ? menuItems.findIndex(item => item.href.toLowerCase() === currentPage)
-            : 0;
+        // Kapitelnummer: filnavn (kapitel2.html → 2), ellers data-chapter på body.
+        // Ikke menu-indeks (forsiden er index 0 og gav 0.1 ved forkert match).
+        const kapitelMatch = currentPage.match(/^kapitel(\d+)\.html$/i);
+        const dataChapter = parseInt(document.body.getAttribute('data-chapter') || '', 10);
+        const chapterNumber = kapitelMatch
+            ? parseInt(kapitelMatch[1], 10)
+            : (Number.isFinite(dataChapter) ? dataChapter : 0);
 
         let h2Counter = 0, h3Counter = 0, h4Counter = 0;
 

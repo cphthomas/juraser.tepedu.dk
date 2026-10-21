@@ -57,7 +57,7 @@ EXTRA = {
 NEW = {
     "Accept": (
         "Gæstens ja til dit tilbud.",
-        "Gæsten klikker Book og betaler 1.890 kr. for to nætter. Accepten gør tilbuddet til en aftale. Et like på Instagram er ikke en accept.",
+        "Gæsten bestiller to nætter og betaler 1.890 kr. Accepten gør tilbuddet til en aftale. At synes godt om et opslag er ikke en accept.",
     ),
     "Ankenævn": (
         "Uafhængigt nævn, der afgør forbrugerklager.",
@@ -223,7 +223,7 @@ def rebuild_glossary():
              ["De betyder det samme", "Mangel er en fejl. Fortrydelse er uden fejl", "Fortrydelse gælder kun handelskøb", "Mangel gælder kun Instagram"]),
             ("Hvad er forskellen på garanti og reklamationsret?", 0,
              "Reklamationsretten følger loven. Garantien er et ekstra løfte oveni.",
-             ["Reklamationsretten følger loven. Garantien er et ekstra løfte", "Garantien fjerner reklamationsretten", "Kun garantien gælder i shoppen", "Reklamationsret gælder kun ydelser"]),
+             ["Reklamationsretten følger loven. Garantien er et ekstra løfte", "Garantien fjerner reklamationsretten", "Kun garantien gælder i butikken", "Reklamationsret gælder kun ydelser"]),
             ("Hvad er forskellen på vildledning og udeladelse?", 2,
              "Vildledning er forkert information. Udeladelse er det, du glemmer at sige.",
              ["Udeladelse er altid strafbart. Vildledning er det aldrig", "De gælder kun priser", "Vildledning er forkert info. Udeladelse er det, du ikke siger", "Udeladelse gælder kun pakkerejser"]),
@@ -356,9 +356,9 @@ KAP1_QUIZ = "\n".join([
 ])
 
 KAP2_EXTRA = """
-                <h2>Eksempler fra shop, konference og udsalg</h2>
+                <h2>Eksempler fra butik, konference og udsalg</h2>
                 <div class="example-box">
-                    <p><b>Hotelshop.</b> Skiltet siger 199 kr. Kassen trækker 249 kr. Ret det med det samme. Det er både prisskiltning og en forkert varepris.</p>
+                    <p><b>Butikken.</b> Skiltet siger 199 kr. Kassen trækker 249 kr. Ret det med det samme. Det er både prisskiltning og en forkert varepris.</p>
                 </div>
                 <div class="example-box">
                     <p><b>Konferencepakke.</b> Firmaet køber sal, frokost og AV. Det er ydelser. Køber de samtidig 40 flasker vand til at tage med hjem, er flaskerne varer. Hold regningerne adskilt, når der klages.</p>
@@ -366,7 +366,7 @@ KAP2_EXTRA = """
                 <div class="example-box">
                     <p><b>Udsalg.</b> Du sælger en lampe med en synlig ridse og skiltet udsalg. Ridsen er oplyst og er ikke en mangel. At lampen ikke tænder, er en mangel. Skjul ikke den fejl, gæsten ikke kan se.</p>
                 </div>
-                <h2>Forvekslinger i shoppen</h2>
+                <h2>Forvekslinger i butikken</h2>
                 <div class="table-responsive mb-4">
                     <table class="table table-striped table-bordered">
                         <thead><tr><th>Forveksling</th><th>Forskellen</th></tr></thead>
@@ -374,7 +374,7 @@ KAP2_EXTRA = """
                             <tr><td>Mangel og fortrydelse</td><td>Mangel er noget galt. Fortrydelse er omfortrydelse uden fejl</td></tr>
                             <tr><td>Garanti og reklamationsret</td><td>Reklamationsretten følger loven. Garantien er et ekstra løfte</td></tr>
                             <tr><td>Afhjælpning og ophævelse</td><td>Afhjælpning retter. Ophævelse ruller købet tilbage</td></tr>
-                            <tr><td>Forbrugerkøb og handelskøb</td><td>Gæsten i shoppen er ofte forbruger. Grossistleverancen er handelskøb</td></tr>
+                            <tr><td>Forbrugerkøb og handelskøb</td><td>Gæsten i butikken er ofte forbruger. Grossistleverancen er handelskøb</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -385,7 +385,7 @@ KAP2_QUIZ = "\n".join([
         ("En gæst klager over et beskidt værelse. Er det købeloven?", 0,
          "Nej. Det er en ydelse. Se kapitel 1.",
          ["Nej. Det er en ydelse", "Ja. Alt på hotellet er købeloven", "Ja, hvis gæsten har betalt", "Kun hvis værelset er en suite"]),
-        ("Gæsten køber en flaske vin i shoppen. Hvilken lov?", 1,
+        ("Gæsten køber en flaske vin i butikken. Hvilken lov?", 1,
          "Flasken er en vare. Købeloven gælder.",
          ["Pakkerejseloven", "Købeloven", "Kun markedsføringsloven", "Ingen, fordi salget sker i lobbyen"]),
         ("Firmaet køber 40 flasker vand med hjem fra konferencen. Hvad er flaskerne?", 2,
@@ -427,10 +427,10 @@ KAP2_QUIZ = "\n".join([
         ("Du bestiller 50 hvide duge. Der kommer 50 råhvide, og arrangementet er i morgen. Hvad gør du først?", 0,
          "Reklamér med det samme. Det er handelskøb.",
          ["Reklamér med det samme med foto", "Vent, til arrangementet er overstået", "Brug forbrugerkøbets toårsfrist", "Kalder det en pakkerejse"]),
-        ("Hvornår går risikoen normalt over i shoppen?", 1,
+        ("Hvornår går risikoen normalt over i butikken?", 1,
          "Når gæsten har fået varen i hånden og betalt.",
-         ["Først efter to år", "Ved leveringen i shoppen", "Når gæsten forlader hotellet", "Aldrig, hvis der er garanti"]),
-        ("Gaven er købt i shoppen. Lynlåsen går i stykker efter en måned. Må gavemodtageren reklamere?", 2,
+         ["Først efter to år", "Ved leveringen i butikken", "Når gæsten forlader hotellet", "Aldrig, hvis der er garanti"]),
+        ("Gaven er købt i butikken. Lynlåsen går i stykker efter en måned. Må gavemodtageren reklamere?", 2,
          "Ja, typisk. Bed om kvittering eller anden dokumentation.",
          ["Nej. Kun den, der betalte, må klage", "Nej. Gaver er uden for købeloven", "Ja, typisk, med kvittering eller anden dokumentation", "Kun hvis gaven kostede over 500 kr."]),
         ("Webshoppen lover en velkomstpakke på en bestemt dato. Pakken er tre dage forsinket. Hvad er nok?", 1,
