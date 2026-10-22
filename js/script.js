@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('article table a[href], .content table a[href]').forEach(function (a) {
+        a.classList.add('effectLinksTable');
+    });
+
     const article = document.querySelector('article');
     if (!article) return;
 

@@ -500,6 +500,154 @@ table.table-bordered {
     border: none !important;
 }
 
+/* Tabeller: luft, række-markør og lovlinks der wiper ved hover */
+table.table thead th {
+    font-family: var(--font-ui, 'IBM Plex Mono', monospace);
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.95rem 1rem !important;
+    vertical-align: bottom;
+    line-height: 1.35;
+    white-space: normal !important;
+}
+
+table.table tbody td {
+    padding: 1rem 1rem !important;
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+table.table tbody td:first-child {
+    font-weight: 600;
+}
+
+table.table tbody tr td:first-child {
+    box-shadow: inset 3px 0 0 transparent;
+    transition: box-shadow 0.28s ease;
+}
+
+table.table tbody tr:hover td {
+    background-color: rgba(15, 109, 92, 0.07) !important;
+}
+
+table.table tbody tr:hover td:first-child {
+    box-shadow: inset 3px 0 0 #0f6d5c;
+}
+
+[data-theme="dark"] table.table tbody tr:hover td {
+    background-color: rgba(58, 168, 143, 0.16) !important;
+}
+
+[data-theme="dark"] table.table tbody tr:hover td:first-child {
+    box-shadow: inset 3px 0 0 #5ec4a8;
+}
+
+table.sag-tabel {
+    table-layout: fixed;
+}
+
+table.sag-tabel th:nth-child(1),
+table.sag-tabel td:nth-child(1) {
+    width: 20%;
+}
+
+table.sag-tabel th:nth-child(2),
+table.sag-tabel td:nth-child(2) {
+    width: 46%;
+}
+
+table.sag-tabel th:nth-child(3),
+table.sag-tabel td:nth-child(3) {
+    width: 34%;
+}
+
+a.effectLinksTable {
+    position: relative;
+    display: inline-block;
+    margin: 0.2rem 0.35rem 0.2rem 0;
+    padding: 0.08rem 0.4rem;
+    color: #0a4436 !important;
+    background-color: rgba(15, 109, 92, 0.12) !important;
+    background-image: linear-gradient(#0f6d5c, #0f6d5c) !important;
+    background-repeat: no-repeat !important;
+    background-position: left center !important;
+    background-size: 0% 100% !important;
+    font-weight: 600 !important;
+    font-size: 0.92em;
+    line-height: 1.45;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    vertical-align: baseline;
+    transition: background-size 0.42s cubic-bezier(0.77, 0, 0.175, 1), color 0.22s ease !important;
+}
+
+a.effectLinksTable::before,
+a.effectLinksTable::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+}
+
+a.effectLinksTable:hover,
+a.effectLinksTable:focus {
+    color: #ffffff !important;
+    background-size: 100% 100% !important;
+    outline: none;
+}
+
+a.effectLinksTable:focus-visible {
+    outline: 2px solid #0f6d5c;
+    outline-offset: 2px;
+}
+
+a.effectLinksTable[href^="http"] {
+    padding-right: 1.3rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a4436' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E"), linear-gradient(#0f6d5c, #0f6d5c) !important;
+    background-repeat: no-repeat, no-repeat !important;
+    background-position: right 0.32rem center, left center !important;
+    background-size: 0.68em 0.68em, 0% 100% !important;
+}
+
+a.effectLinksTable[href^="http"]:hover,
+a.effectLinksTable[href^="http"]:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E"), linear-gradient(#0f6d5c, #0f6d5c) !important;
+    background-size: 0.68em 0.68em, 100% 100% !important;
+}
+
+[data-theme="dark"] a.effectLinksTable {
+    color: #e7fff8 !important;
+    background-color: rgba(58, 168, 143, 0.2) !important;
+    background-image: linear-gradient(#1a7a66, #1a7a66) !important;
+}
+
+[data-theme="dark"] a.effectLinksTable[href^="http"] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e7fff8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E"), linear-gradient(#1a7a66, #1a7a66) !important;
+}
+
+[data-theme="dark"] a.effectLinksTable:hover,
+[data-theme="dark"] a.effectLinksTable:focus,
+[data-theme="dark"] a.effectLinksTable[href^="http"]:hover,
+[data-theme="dark"] a.effectLinksTable[href^="http"]:focus {
+    color: #ffffff !important;
+    background-size: 0.68em 0.68em, 100% 100% !important;
+}
+
+[data-theme="dark"] a.effectLinksTable:not([href^="http"]):hover,
+[data-theme="dark"] a.effectLinksTable:not([href^="http"]):focus {
+    background-size: 100% 100% !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    a.effectLinksTable,
+    table.table tbody tr td:first-child {
+        transition: none !important;
+    }
+}
+
 /* Tabel 5.6 — ingen scroll, sidste søjle får mest plads */
 .table-wrapper-56 {
     overflow: visible;
