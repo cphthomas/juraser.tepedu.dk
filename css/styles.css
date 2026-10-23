@@ -630,16 +630,15 @@ table {
 }
 
 .effectLinksTable {
-    overflow: hidden;
+    overflow: visible;
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
     color: rgb(57, 56, 56);
-    /* Changed from white to black */
     background: none;
-    /* Removed background color */
     padding: 0px;
-    width: 100%;
+    width: fit-content;
 }
 
 .effectLinksTable::after {
@@ -1055,10 +1054,10 @@ kbd {
 
 
 /* CRITICAL FIX: Prevent wrapping of legal symbols and numbers in badges */
-.content table td a[href],
-article table td a[href],
-.info-box a[href],
-.example-box a[href],
+.content table td a[href]:not(.effectLinksTable),
+article table td a[href]:not(.effectLinksTable),
+.info-box a[href]:not(.effectLinksTable),
+.example-box a[href]:not(.effectLinksTable),
 .legal-term-link {
     /* Added a class just in case we need it later */
     white-space: nowrap !important;

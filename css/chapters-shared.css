@@ -516,7 +516,15 @@ table.table thead th {
 table.table tbody td {
     padding: 1rem 1rem !important;
     vertical-align: top;
-    line-height: 1.5;
+    line-height: 1.85;
+}
+
+table.table tbody td:first-child {
+    min-width: 7rem;
+}
+
+table.table tbody td .legal-term {
+    line-height: inherit;
 }
 
 table.table tbody td:first-child {
@@ -565,9 +573,15 @@ table.sag-tabel td:nth-child(3) {
 
 a.effectLinksTable {
     position: relative;
-    display: inline-block;
-    margin: 0.2rem 0.35rem 0.2rem 0;
-    padding: 0.08rem 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    width: max-content;
+    max-width: none;
+    overflow: visible;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    margin: 0.15rem 0.4rem 0.15rem 0;
+    padding: 0.1rem 0.45rem;
     color: #0a4436 !important;
     background-color: rgba(15, 109, 92, 0.12) !important;
     background-image: linear-gradient(#0f6d5c, #0f6d5c) !important;
@@ -585,7 +599,7 @@ a.effectLinksTable {
 }
 
 a.effectLinksTable::before,
-a.effectLinksTable::after {
+a.effectLinksTable:not([href^="http"])::after {
     content: none !important;
     display: none !important;
     background: none !important;
@@ -604,18 +618,29 @@ a.effectLinksTable:focus-visible {
     outline-offset: 2px;
 }
 
-a.effectLinksTable[href^="http"] {
-    padding-right: 1.3rem;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a4436' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E"), linear-gradient(#0f6d5c, #0f6d5c) !important;
-    background-repeat: no-repeat, no-repeat !important;
-    background-position: right 0.32rem center, left center !important;
-    background-size: 0.68em 0.68em, 0% 100% !important;
+a.effectLinksTable[href^="http"]::after {
+    content: "" !important;
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    padding: 0 !important;
+    display: inline-block !important;
+    width: 0.78em;
+    height: 0.78em;
+    margin-left: 0.4em;
+    vertical-align: -0.1em;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a4436' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E") center / contain no-repeat !important;
 }
 
 a.effectLinksTable[href^="http"]:hover,
 a.effectLinksTable[href^="http"]:focus {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E"), linear-gradient(#0f6d5c, #0f6d5c) !important;
-    background-size: 0.68em 0.68em, 100% 100% !important;
+    background-size: 100% 100% !important;
+}
+
+a.effectLinksTable[href^="http"]:hover::after,
+a.effectLinksTable[href^="http"]:focus::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E") !important;
 }
 
 [data-theme="dark"] a.effectLinksTable {
@@ -624,8 +649,8 @@ a.effectLinksTable[href^="http"]:focus {
     background-image: linear-gradient(#1a7a66, #1a7a66) !important;
 }
 
-[data-theme="dark"] a.effectLinksTable[href^="http"] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e7fff8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E"), linear-gradient(#1a7a66, #1a7a66) !important;
+[data-theme="dark"] a.effectLinksTable[href^="http"]::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e7fff8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E") !important;
 }
 
 [data-theme="dark"] a.effectLinksTable:hover,
@@ -633,7 +658,12 @@ a.effectLinksTable[href^="http"]:focus {
 [data-theme="dark"] a.effectLinksTable[href^="http"]:hover,
 [data-theme="dark"] a.effectLinksTable[href^="http"]:focus {
     color: #ffffff !important;
-    background-size: 0.68em 0.68em, 100% 100% !important;
+    background-size: 100% 100% !important;
+}
+
+[data-theme="dark"] a.effectLinksTable[href^="http"]:hover::after,
+[data-theme="dark"] a.effectLinksTable[href^="http"]:focus::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E") !important;
 }
 
 [data-theme="dark"] a.effectLinksTable:not([href^="http"]):hover,
